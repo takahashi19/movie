@@ -1,0 +1,17 @@
+<div class="main reveiws-index">
+  <div class="container">
+    <% @reveiws.each do |reveiw| %>
+      <div class="reveiws-index-item">
+        <div class="reveiw-left">
+          <img src="<%= "/user_images/#{reveiw.user.image_name}" %>">
+        </div>
+        <div class="reveiw-right">
+          <div class="reveiw-user-name">
+            <%= link_to(reveiw.user.name, "/users/#{reveiw.user.id}") %>
+          </div>
+          <%= link_to(reveiw.content, "/reveiws/#{reveiw.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
