@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/top'
 #   reveiw "likes/:reveiw_id/create" => "likes#create"
 #   reveiw "likes/:reveiw_id/destroy" => "likes#destroy"
 
