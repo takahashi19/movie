@@ -7,6 +7,7 @@ class CreateReveiws < ActiveRecord::Migration[5.2]
       t.integer :chinema_id
 
       t.timestamps
+      
     end
   end
 end
