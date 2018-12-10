@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TweetApp</title>
+    <title>映画の口コミ</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,9 +14,9 @@
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("TweetApp", "/reveiws/index") %>
+          <%= link_to("映画の口コミ", "/reveiws/index") %>
         <% else %>
-          <%= link_to("TweetApp", "/") %>
+          <%= link_to("映画の口コミ", "/") %>
         <% end %>
       </div>
       <ul class="header-menus">
@@ -38,7 +38,7 @@
           </li>
         <% else %>
           <li>
-            <%= link_to("TweetAppとは", "/about") %>
+            <%= link_to("映画の口コミとは", "/about") %>
           </li>
           <li>
             <%= link_to("新規登録", "/signup") %>
