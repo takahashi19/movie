@@ -1,6 +1,6 @@
 class CreateReveiws < ActiveRecord::Migration[5.2]
   def change
-    create_table :reviews do |t|
+    create_table :reveiws do |t|
       t.text :content
       t.integer :hyouka
       t.integer :user_id
