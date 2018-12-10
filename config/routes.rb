@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  get 'home/top'
+    get "movies/home" => "movies#home"
+    
 #   reveiw "likes/:reveiw_id/create" => "likes#create"
 #   reveiw "likes/:reveiw_id/destroy" => "likes#destroy"
+
+#ーーーーーーーーーこっからMovieーーーーーーーーーーー
+  resources :movies
+  #（仮のルーティングCRUD機能のルーティングはされる）
+
+#ーーーーーーーーーこっからUserーーーーーーーーーーー
 
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
@@ -14,6 +21,7 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
 #   get "users/:id/likes" => "users#likes"
 
+#-----------------こっからReviewーーーーーーーーーーー
   get "/" => "reveiws#index"
   get "reveiws/new" => "reveiws#new"
   get "reveiws/:id" => "reveiws#show"
@@ -23,5 +31,5 @@ Rails.application.routes.draw do
   post "reveiws/:id/destroy" => "reveiws#destroy"
 
 #   get "/" => "home#top"
-#   get "about" => "home#about"
+  get "about" => "home#about"
 end

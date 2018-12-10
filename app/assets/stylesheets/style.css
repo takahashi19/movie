@@ -1,0 +1,214 @@
+h1{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    margin: auto;
+}
+
+p{
+    margin-top: 20px;
+}
+
+img{
+    height:200px;
+}
+
+.main_img { 
+    text-align: center;
+}
+
+.aaa{
+width:100%;
+}
+
+
+
+section h2{
+	font-size: 22px;
+	font-weight:normal;
+	text-align: center;
+}
+
+.saisin2{
+	width: 80%;
+	margin: 0 auto;
+    padding-bottom: 80px;
+    border: solid 2px #000000;
+}
+
+.saisin2 p {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.main_rank{
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+
+.main_rank .title{
+    font-size: 30px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+
+.sub_rank2{
+    text-align: center;
+}
+
+.sub_rank .sub_img{
+    max-height: 200px;
+    /* position: absolute; */
+    bottom: 0;
+}
+
+.sub_rank2 .title{
+    font-size: 25px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+
+ul.sub_rank {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+/*レビュー機能*/
+.evaluation{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.evaluation input[type='radio']{
+    display: none;
+}
+.evaluation label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: gray;
+    cursor: pointer;
+    font-size: 20px;
+}
+.evaluation label .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
+.evaluation label:hover,
+.evaluation label:hover ~ label,
+.evaluation input[type='radio']:checked ~ label{
+    color: #ffcc00;
+}
+/*レビュー機能end*/
+/*検索フォーム*/
+/*#sbox1{
+    max-width: 300px;
+    height: 30px;
+    border-radius: 2px;
+    outline: 0;
+    margin-bottom: 10px;
+    background: #eee;	
+}*/
+
+.nav{
+    list-style: none;
+}
+
+.nav{
+    display: flex;
+    }
+    .nav li{
+    color: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    background: #60B99A;
+    }
+
+
+
+
+/*テスト領域*/
+/**
+ * 最大幅の指定と中央寄せ
+ */
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+/**
+ * swiper.js
+ */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  fill: #fff;
+  stroke: none;
+  stroke-width: 0;
+  z-index: 10000;
+  width: 20px;
+  margin-top: -18px;
+  background-image: none;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 27px;
+    margin-top: -22px;
+  }
+}
+
+/**
+ * mainvisual
+ */
+.mainvisual {
+  overflow-x: hidden;
+}
+.a {
+	width:60%;
+	height: 60%;
+}
+
+/*リンクデザイン～*/
+.cp_link {
+	padding: 0.1em 0.3em;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgba(255,152,0,1) 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+	color: #ff9800;
+}
+.cp_link:hover {
+	background-position: -100% 0;
+	color: #fff;
+}
+
+p {
+  color:#111111;
+}
+@media screen and (max-width: 480px){
+p {
+  color:#FFFFFF;
+}
+}
