@@ -100,10 +100,11 @@ margin-top: 10px;
                 <label for="star5"><span class="text">最悪</span>★</label>
             </div><!-- evaluation -->
         </form>
-        <p class="title">ボヘミアンラプソディー</p>
+        
+        <p class="title"><%=@cinema.movie_name%></p>
     <img src="/Bohemian.jpg" alt="">
     <!--↑images/Bohemian.jpg" alt=""が元データ-->
-	<p>ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！</p>
+	<p><%=@cinema.synopsis%></p><!--映画の紹介文-->
 	<a href ="review.html" class="cp_link">レビューを見る</a>
 </div><!-- main_rank -->
 
