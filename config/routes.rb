@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
     get "movies/home" => "movies#home"
     
-#   reveiw "likes/:reveiw_id/create" => "likes#create"
-#   reveiw "likes/:reveiw_id/destroy" => "likes#destroy"
+  post "likes/:reveiw_id/create" => "likes#create"
+  post "likes/:reveiw_id/destroy" => "likes#destroy"
 
 #ーーーーーーーーーこっからMovieーーーーーーーーーーー
   resources :movies
