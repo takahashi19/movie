@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    get "movies/home" => "movies#home"
+  get "movies/home" => "movies#home"
     
   post "likes/:reveiw_id/create" => "likes#create"
   post "likes/:reveiw_id/destroy" => "likes#destroy"
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 #   get "users/:id/likes" => "users#likes"
 
 #-----------------こっからReviewーーーーーーーーーーー
-  get "/" => "reveiws#index"
+  get "reveiws/index" => "reveiws#index"
   get "reveiws/new" => "reveiws#new"
   get "reveiws/:id" => "reveiws#show"
   post "reveiws/create" => "reveiws#create"

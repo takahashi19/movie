@@ -49,7 +49,7 @@ margin-top: 10px;
         <div class="swiper-slide"><img class="a" src="/hobbit_an unexpectedjourney.jpg"></div>
         <div class="swiper-slide"><img class="a" src="/harrypotterand thephilosopher's stone.jpg"></div>
         <div class="swiper-slide"><img class="a" src="/jumanji_welcometothejungle.jpg"></div>
-        <div class="swiper-slide"><img class="a" src="/jurassicpark.jpg"></div>
+        <div class="swiper-slide"><img class="a" src="images/jurassicpark.jpg"></div>
         
         <!--↑<img class="a"src="images/画像ファイル名">-->
         
@@ -100,10 +100,11 @@ margin-top: 10px;
                 <label for="star5"><span class="text">最悪</span>★</label>
             </div><!-- evaluation -->
         </form>
-        <p class="title">ボヘミアンラプソディー</p>
+        
+        <p class="title"><%=@cinema.movie_name%></p>
     <img src="/Bohemian.jpg" alt="">
     <!--↑images/Bohemian.jpg" alt=""が元データ-->
-	<p>ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！</p>
+	<p><%=@cinema.synopsis%></p><!--映画の紹介文-->
 	<a href ="review.html" class="cp_link">レビューを見る</a>
 </div><!-- main_rank -->
 
@@ -347,7 +348,18 @@ margin-top: 10px;
     <p>Copyright c 2018 Apple Inc. All rights reserved.</p>
 </footer>  application.html.erbに記載-->
 
-<script src="topimg.js"></script>
+<script>
+/*wiper.js の初期化処理*/
+window.addEventListener('load', function() {
+  var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 'auto',
+    spaceBetween: 2,
+    speed: 200,
+    // autoplay: 2000
+  });
+}, false);
+</script>
 
 <script src="dist/js/swiper.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
