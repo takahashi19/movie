@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2018_12_11_062744) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "movie", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "movie_name", limit: 30
+    t.string "synopsis", limit: 100
+    t.string "grossing", limit: 30
+    t.string "image", limit: 80
+  end
+
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "movie_name"
     t.string "synopsis"
@@ -37,13 +44,17 @@ ActiveRecord::Schema.define(version: 2018_12_11_062744) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
+  create_table "review", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "id"
+    t.string "content", limit: 100
     t.integer "hyouka"
     t.integer "user_id"
-    t.integer "chinema_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "cinema_id"
+  end
+
+  create_table "user", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user", limit: 20
+    t.string "password", limit: 20
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
