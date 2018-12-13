@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "movies/home" => "movies#home"
+  get "/" => "movies#home"
     
   post "likes/:reveiw_id/create" => "likes#create"
   post "likes/:reveiw_id/destroy" => "likes#destroy"
