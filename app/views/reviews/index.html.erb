@@ -18,28 +18,37 @@
 
 
 
-
-
 <div class="col-xs-12 text-center">
   <div class="thumbnail">
-    <h1>第一位</h1>
-    <p>評価</p>
     <h2>ボヘミアンラプソディー</h2>
-    <img src="img/Bohemian.jpg">
+    <img src="https://dl.dropboxusercontent.com/s/m4ye2buogo71l9d/Bohemian.jpg">
     <div class="caption" style="font-size: 17px;">
       <p>ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！</p>
     </div>
-    <p>レビューを見る</p>
   </div>
 </div>
 
 <h3 class="page-header">評価</h3>
 <form class="form-horizontal">
   <div class="form-group">
-    <label class="col-sm-3 control-label" for="name1">お名前</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="name1">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <form type="get" action="#">
+      <div class="evaluation">
+        <input id="star1" type="radio" name="star" value="5" />
+        <label for="star1"><span class="text">最高</span>★</label>
+        <input id="star2" type="radio" name="star" value="4" />
+        <label for="star2"><span class="text">良い</span>★</label>
+        <input id="star3" type="radio" name="star" value="3" />
+        <label for="star3"><span class="text">普通</span>★</label>
+        <input id="star4" type="radio" name="star" value="2" />
+        <label for="star4"><span class="text">悪い</span>★</label>
+        <input id="star5" type="radio" name="star" value="1" />
+        <label for="star5"><span class="text">最悪</span>★</label>
+      </div><!-- evaluation -->
+      </form>
     </div>
+    <div class="col-sm-6"></div>
   </div>
   <div class="form-group">
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
@@ -48,7 +57,7 @@
     </div>
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-9 text-right">
+    <div class="col-sm-offset-3 col-sm-9 text-right" style="margin-top: 30px;">
       <button class="btn btn-default">クリア</button>
       <button class="btn btn-primary">書き込む</button>
     </div>
@@ -69,7 +78,13 @@
 
 </div>        <!-- 全体を囲むコンテナ -->
 
-
+<!-- フッター始まり -->
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted text-center">Copyright (c) 2018 Apple Inc. All rights reserved.</p>
+  </div>
+</footer>
+<!-- フッター終わり -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
