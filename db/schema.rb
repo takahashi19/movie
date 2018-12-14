@@ -28,15 +28,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_062744) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reveiws", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
-    t.integer "hyouka"
-    t.integer "user_id"
-    t.integer "chinema_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.integer "hyouka"

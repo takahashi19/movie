@@ -51,16 +51,16 @@
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
-            <%= link_to("投稿一覧", "/reveiws/index") %>
+            <%= link_to("投稿一覧", "/reviews/index") %>
           </li>
           <li>
-            <%= link_to("新規投稿", "/reveiws/new") %>
+            <%= link_to("新規投稿", "/reviews/new") %>
           </li>
           <li>
             <%= link_to("ユーザー一覧", "/users/index") %>
           </li>
           <li>
-            <%= link_to("ログアウト", "/logout", {method: :reveiw}) %>
+            <%= link_to("ログアウト", "/logout", {method: :review}) %>
           </li>
         <% else %>
           <li>
@@ -93,7 +93,7 @@
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("映画の口コミ", "/reveiws/index") %>
+          <%= link_to("映画の口コミ", "/reviews/index") %>
         <% else %>
           <%= link_to("映画の口コミ", "/") %>
         <% end %>

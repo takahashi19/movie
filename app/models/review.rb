@@ -1,4 +1,4 @@
-class Reveiw < ApplicationRecord
+class Review < ApplicationRecord
   validates :content, {presence: true, length: {maximum: 140}}
   validates :user_id, {presence: true}
   # has_many :movies

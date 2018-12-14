@@ -1,15 +1,15 @@
-<div class="main reveiws-index">
+<div class="main reviews-index">
   <div class="container">
-    <% @reveiws.each do |reveiw| %>
-      <div class="reveiws-index-item">
-        <div class="reveiw-left">
-          <img src="<%= "/user_images/#{reveiw.user.image_name}" %>">
+    <% @reviews.each do |review| %>
+      <div class="reviews-index-item">
+        <div class="review-left">
+          <img src="<%= "/user_images/#{review.user.image_name}" %>">
         </div>
-        <div class="reveiw-right">
-          <div class="reveiw-user-name">
-            <%= link_to(reveiw.user.name, "/users/#{reveiw.user.id}") %>
+        <div class="review-right">
+          <div class="review-user-name">
+            <%= link_to(review.user.name, "/users/#{review.user.id}") %>
           </div>
-          <%= link_to(reveiw.content, "/reveiws/#{reveiw.id}") %>
+          <%= link_to(review.content, "/reviews/#{review.id}") %>
         </div>
       </div>
     <% end %>

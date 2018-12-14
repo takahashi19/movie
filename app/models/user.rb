@@ -5,8 +5,8 @@ class User < ApplicationRecord
   validates :email, {presence: true, uniqueness: true}
   
   
-  def reveiws
-    return Reveiw.where(user_id: self.id)
+  def reviews
+    return Review.where(user_id: self.id)
   end
   
 end
