@@ -1,0 +1,32 @@
+<div class="main reviews-show">
+  <div class="container">
+    <div class="reviews-show-item">
+      <div class="review-user-name">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      </div>
+      <p>
+        <%= @review.content %>
+      </p>
+      <div class="review-time">
+        <%= @review.created_at %>
+      </div>
+      <% if Like.find_by(user_id: @current_user.id, review_id: @review.id) %>
+        <%= link_to("/likes/#{@review.id}/destroy", {method: "review"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/#{@review.id}/create", {method: "review"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+      <%= @likes_count %>
+      <% if @review.user_id == @current_user.id %>
+        <div class="review-menus">
+          <%= link_to("編集", "/reviews/#{@review.id}/edit") %>
+          <%= link_to("削除", "/reviews/#{@review.id}/destroy", {method: "review"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-    get "movies/home" => "movies#home"
+  get "/" => "movies#home"
     
-#   reveiw "likes/:reveiw_id/create" => "likes#create"
-#   reveiw "likes/:reveiw_id/destroy" => "likes#destroy"
+  post "likes/:review_id/create" => "likes#create"
+  post "likes/:review_id/destroy" => "likes#destroy"
 
 #ーーーーーーーーーこっからMovieーーーーーーーーーーー
   resources :movies
@@ -19,16 +19,16 @@ Rails.application.routes.draw do
   post "login" => "users#login"
   post "logout" => "users#logout"
   get "login" => "users#login_form"
-#   get "users/:id/likes" => "users#likes"
+   get "users/:id/likes" => "users#likes"
 
 #-----------------こっからReviewーーーーーーーーーーー
-  get "/" => "reveiws#index"
-  get "reveiws/new" => "reveiws#new"
-  get "reveiws/:id" => "reveiws#show"
-  post "reveiws/create" => "reveiws#create"
-  get "reveiws/:id/edit" => "reveiws#edit"
-  post "reveiws/:id/update" => "reveiws#update"
-  post "reveiws/:id/destroy" => "reveiws#destroy"
+  get "reviews/index" => "reviews#index"
+  get "reviews/new" => "reviews#new"
+  get "reviews/:id" => "reviews#show"
+  post "reviews/create" => "reviews#create"
+  get "reviews/:id/edit" => "reviews#edit"
+  post "reviews/:id/update" => "reviews#update"
+  post "reviews/:id/destroy" => "reviews#destroy"
 
 #   get "/" => "home#top"
   get "about" => "home#about"

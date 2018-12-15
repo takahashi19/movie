@@ -1,12 +1,12 @@
-/* reveiws/index ================================ */
-.reveiws-index-item {
+/* reviews/index ================================ */
+.reviews-index-item {
   padding: 20px 30px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
 }
 
-.reveiw-left img {
+.review-left img {
   width: 50px;
   height: 50px;
   border-radius: 40%;
@@ -14,39 +14,39 @@
   object-fit: cover;
 }
 
-.reveiw-user-name a {
+.review-user-name a {
   font-weight: 600;
 }
 
-.reveiw-user-name a:hover {
+.review-user-name a:hover {
   color: #3ecdc6;
 }
 
-.reveiw-left {
+.review-left {
   float: left;
   width: 10%;
 }
 
-.reveiw-right {
+.review-right {
   float: left;
   width: 90%;
   padding-left: 25px;
   text-align: left;
 }
 
-/* reveiws/show ================================ */
-.reveiws-show form {
+/* reviews/show ================================ */
+.reviews-show form {
   display: inline;
 }
 
-.reveiws-show-item {
+.reviews-show-item {
   padding: 30px;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
 }
 
-.reveiws-show-item img {
+.reviews-show-item img {
   width: 60px;
   height: 60px;
   border-radius: 40%;
@@ -55,18 +55,18 @@
   object-fit: cover;
 }
 
-.reveiws-show-item .reveiw-user-name a {
+.reviews-show-item .review-user-name a {
   vertical-align: middle;
   font-size: 24px;
   margin-left: 15px;
 }
 
-.reveiws-show-item p {
+.reviews-show-item p {
   font-size: 24px;
   margin: 20px 0;
 }
 
-.reveiw-time {
+.review-time {
   color: #8899a6;
   margin-bottom: 10px;
 }
@@ -79,23 +79,23 @@
   color: #ff2581;
 }
 
-.reveiws-show-item .fa {
+.reviews-show-item .fa {
   font-size: 16px;
   margin-right: 3px;
 }
 
-.reveiw-menus {
+.review-menus {
   float: right;
 }
 
-.reveiw-menus a, .reveiw-menus input {
+.review-menus a, .review-menus input {
   color: #8899a6;
   text-decoration: underline;
   font-size: 14px;
 }
 
-/* reveiws/new ================================ */
-.reveiws-new textarea {
+/* reviews/new ================================ */
+.reviews-new textarea {
   font-size: 20px;
   padding: 10px;
   min-height: 140px;
@@ -103,7 +103,7 @@
   resize: none;
 }
 
-.reveiws-new textarea::-webkit-input-placeholder {
+.reviews-new textarea::-webkit-input-placeholder {
   font-size: 24px;
   opacity: 0.5;
 }

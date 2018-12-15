@@ -1,7 +1,3 @@
-/* reset ================================ */
-* {
-  box-sizing: border-box;
-}
 
 html {
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
@@ -35,7 +31,7 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-/* 共通レイアウト ================================ */
+//
 body {
   color: #2d3133;
   background-color: #3ecdc6;
@@ -60,7 +56,7 @@ body {
   clear: both;
 }
 
-/* ヘッダー ================================ */
+
 header {
   height: 64px;
   position: absolute;
@@ -113,7 +109,7 @@ header {
   font-size: 13px;
 }
 
-/* top ================================ */
+
 .top-main {
   padding: 200px 0 100px;
   text-align: center;
@@ -146,7 +142,7 @@ header {
   font-size: 24px;
 }
 
-/* about ================================ */
+
 .about-main {
   padding: 180px 8% 0;
   color: white;
@@ -167,7 +163,7 @@ header {
   width: 84%;
 }
 
-/* フォーム================================ */
+
 .form {
   max-width: 600px;
   margin: 0 auto;
@@ -225,7 +221,7 @@ header {
   clear: both;
 }
 
-/* フラッシュ ================================ */
+
 .flash {
   padding: 10px 0;
   color: white;

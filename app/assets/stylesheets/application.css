@@ -14,6 +14,40 @@
  *= require_self
  */
 /*ヘッダー開始*/
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+ 
+ 
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+/*
+.container {
+  width: auto;
+ 
+  padding: 0 15px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
 #header{
     background-color: #e1e1fd;
     padding-bottom: 10px;
@@ -41,9 +75,7 @@
     background: #eee;
     margin-left: 20px;	
 }
-/*ヘッダー終わり*/
-
-/*フッター開始*/
+/
 #footer{
     text-align: center;
     background-color: #e1e1fd;
@@ -57,7 +89,7 @@
     -webkit-justify-content: space-around;
     justify-content: space-around;
 }
-/*フッター終わり*/
+
 
 .topback {
 	text-align: right;
@@ -90,3 +122,4 @@
 .cp_link2:hover::after {
   width: 100%;
 }
+*/
