@@ -1,23 +1,22 @@
-
-
-
-
-
 <div class="col-xs-12 text-center">
   <div class="thumbnail">
     <h2>ボヘミアンラプソディー</h2>
+    <!--movies.nameを実装-->
     <img src="https://dl.dropboxusercontent.com/s/m4ye2buogo71l9d/Bohemian.jpg">
+    <!--画像のカラムの呼び出し-->
     <div class="caption" style="font-size: 17px;">
       <p>ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！</p>
+      <!--紹介文のカラムの呼び出し-->
     </div>
   </div>
 </div>
 
-  
 <h3 class="page-header">評価</h3>
 
 <form class="form-horizontal">
-<%= form_tag("/reviews/create") do %>
+ <div class = "test">
+   <%= form_tag("/reviews/create") do %>
+ 
   <div class="form-group">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
@@ -46,13 +45,15 @@
       <textarea rows="5" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
     </div>
   </div>
+  
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9 text-right" style="margin-top: 30px;">
       <button class="btn btn-default">クリア</button>
-      <input class="btn btn-primary" type="submit" value="書き込む"></button>
+      <input class="btn btn-primary" type="submit" value="書き込む">
     </div>
   </div>
 <% end %>
+</div>
 </form>
 
 <h3 class="page-header">レビュー欄</h3>
