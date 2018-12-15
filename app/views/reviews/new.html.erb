@@ -15,25 +15,24 @@
 
 <form class="form-horizontal">
  <div class = "test">
-   <%= form_tag("/reviews/create") do %>
- 
+  <%= form_tag("/reviews/create") do %>
   <div class="form-group">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
-      <form type="get" action="#">
+      <!--<form type="get" action="#">-->
       <div class="evaluation">
-        <input id="star1" type="radio" name="star" value="5" />
+        <input id="star1" type="radio" name="hyouka" value="5" />
         <label for="star1"><span class="text">最高</span>★</label>
-        <input id="star2" type="radio" name="star" value="4" />
+        <input id="star2" type="radio" name="hyouka" value="4" />
         <label for="star2"><span class="text">良い</span>★</label>
-        <input id="star3" type="radio" name="star" value="3" />
+        <input id="star3" type="radio" name="hyouka" value="3" />
         <label for="star3"><span class="text">普通</span>★</label>
-        <input id="star4" type="radio" name="star" value="2" />
+        <input id="star4" type="radio" name="hyouka" value="2" />
         <label for="star4"><span class="text">悪い</span>★</label>
-        <input id="star5" type="radio" name="star" value="1" />
+        <input id="star5" type="radio" name="hyouka" value="1" />
         <label for="star5"><span class="text">最悪</span>★</label>
       </div><!-- evaluation -->
-      </form>
+      <!--</form>-->
     </div>
       <% @review.errors.full_messages.each do |message| %>
          <div class="col-sm-6"> <%= message %></div><!--<div class="form-error">-->
@@ -68,5 +67,5 @@
   <p>先週末にボヘミアン・ラプソディー見てから、四六時中、頭の中でレディオ・ガ・ガがヘビロテ中！ #ボヘミアンラプソディ #ボヘミアン胸アツ</p>
 </div>
 
-</div>        <!-- 全体を囲むコンテナ -->
+</div><!-- 全体を囲むコンテナ -->
 

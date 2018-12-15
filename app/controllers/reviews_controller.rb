@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(
       content: params[:content],
+      hyouka: params[:hyouka],
       user_id: @current_user.id
     )
     if @review.save
