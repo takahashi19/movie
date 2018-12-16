@@ -13,13 +13,13 @@
 
 <h3 class="page-header">評価</h3>
 
-<form class="form-horizontal">
+<div class="form-horizontal">
  <div class = "test">
-  <%= form_tag("/reviews/create") do %>
+ <%= form_tag("/reviews/create") do %>
   <div class="form-group">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
-      <!--<form type="get" action="#">-->
+      <div type="get" action="#">
       <div class="evaluation">
         <input id="star1" type="radio" name="hyouka" value="5" />
         <label for="star1"><span class="text">最高</span>★</label>
@@ -32,7 +32,7 @@
         <input id="star5" type="radio" name="hyouka" value="1" />
         <label for="star5"><span class="text">最悪</span>★</label>
       </div><!-- evaluation -->
-      <!--</form>-->
+      </div>
     </div>
       <% @review.errors.full_messages.each do |message| %>
          <div class="col-sm-6"> <%= message %></div><!--<div class="form-error">-->
@@ -41,7 +41,8 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
     <div class="col-sm-9">
-      <textarea rows="5" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
+  
+      <textarea name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
     </div>
   </div>
   
@@ -53,7 +54,7 @@
   </div>
 <% end %>
 </div>
-</form>
+
 
 <h3 class="page-header">レビュー欄</h3>
 
@@ -69,3 +70,8 @@
 
 </div><!-- 全体を囲むコンテナ -->
 
+</div>
+
+<!--星の表示はif分でも可能-->
+<!--eachで4回だすでも可能-->
+<!--簡単な検索ならRansack-->
