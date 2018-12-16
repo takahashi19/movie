@@ -14,6 +14,8 @@ class ReviewsController < ApplicationController
   
   def new
     @review = Review.new
+    @cinema = Movie.find_by(id:1)
+    
   end
   
   def create
@@ -23,7 +25,7 @@ class ReviewsController < ApplicationController
       user_id: @current_user.id
     )
     if @review.save
-      flash[:notice] = "投稿を作成しました"
+      flash[:notice] = "レビューを投稿しました"
       redirect_to("/reviews/index")
     else
       render("reviews/new")
@@ -38,7 +40,7 @@ class ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     @review.content = params[:content]
     if @review.save
-      flash[:notice] = "投稿を編集しました"
+      flash[:notice] = "レビューを編集しました"
       redirect_to("/reviews/index")
     else
       render("reviews/edit")
@@ -48,7 +50,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find_by(id: params[:id])
     @review.destroy
-    flash[:notice] = "投稿を削除しました"
+    flash[:notice] = "レビューを削除しました"
     redirect_to("/reviews/index")
   end
   
