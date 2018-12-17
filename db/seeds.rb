@@ -1,6 +1,5 @@
 
 INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
-	#以下cinema内容へ入れ替え
 
 ('007 スカイフォール','ダニエル・クレイグ版3作目のスパイ・アクション大作。MI6への恨みを抱く最強の敵を前に、絶体絶命の窮地に追い込まれる。','1108561013','https://dl.dropboxusercontent.com/s/2len6ipbuq0wa5q/007_skyfall.jpg'),
 ('アイアンマン3','彼は何かに取り憑かれたように新型アイアンマン・スーツの開発に没頭。心身共に追い詰められていくトニーだったが…。','1215439994','https://dl.dropboxusercontent.com/s/6nascycobfkfaoj/ironman3.jpg'),
@@ -14,7 +13,7 @@ INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
 ('ジュラシック・パーク','太古の琥珀に閉じ込められたDNAから遺伝子工学によって蘇った恐竜たちだった。解き放たれた恐竜たちは人間に牙を剥き始めた。','1029153882','https://dl.dropboxusercontent.com/s/vcds3lgthxkmjbj/jurassicpark.jpg'),
 ('ジュラシック・ワールド','火山噴火が迫る島から恐竜を救い出そうとする者たちの冒険を描く。監督はJ．A．バヨナ。メインキャストはクリス・プラット。','1668984926','https://dl.dropboxusercontent.com/s/yk66dlp98whoo76/jurassicworld.jpg'),
 ('ジュラシック・ワールド/炎の王国','2015年公開映画『ジュラシック・ワールド』の続編。火山噴火が迫る島から恐竜を救い出そうとする者たちの冒険を描く。','1300569140','https://dl.dropboxusercontent.com/s/5l4mkwzx4nz0v20/jurassicpark_fallenkingdom.jpg'),
-('シュレック2','シュレックとフィオナ姫はドンキーが到着すると、ハンサムな王子を期待し歓迎ムードだった全国民はシュレックの容姿を見て愕然。','919838758','https://dl.dropboxusercontent.com/s/r48e05i0ypg66mk/shrek2.jpg');
+('シュレック2','シュレックとフィオナ姫はドンキーが到着すると、ハンサムな王子を期待し歓迎ムードだった全国民はシュレックの容姿を見て愕然。','919838758','https://dl.dropboxusercontent.com/s/r48e05i0ypg66mk/shrek2.jpg'),
 ('ズートピア','巷では連続行方不明事件が発生、警察も捜査に追われてんてこまい。ついにジュディにも捜査に参加するチャンスが巡ってくるが…','1023803568','https://dl.dropboxusercontent.com/s/3sn86k9ru1wdrq0/zootopia.jpg'),
 ('タイタニック','豪華客船タイタニックが処女航海に出発した。ローズとジャックは船上で運命的に出会い、お互いに強く惹かれていくのだが…。','2186772302','https://dl.dropboxusercontent.com/s/de6lo39fpw3pzmg/titanic.jpg'),
 ('トイ・ストーリー3','成長しておもちゃを卒業したアンディの手を離れ、新たな居場所を見つけたが，待ち受ける絶体絶命の危機と心温まる絆を描く。','1063171911','https://dl.dropboxusercontent.com/s/c3ni0pvtw9wh6v6/toystory3.jpg'),
@@ -38,5 +37,4 @@ INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
 ('ワイルド・スピード ICE BREAK','謎の女サイバーテロリストと手を組んだドミニクの裏切りで最大の危機を迎えたファミリーの運命を壮大なスケールで描き出す','1238852693','https://dl.dropboxusercontent.com/s/qonoykundp4xc1k/wildspeedicebreak.jpg'),
 ('怪盗グルーのミニオン危機一発','美人エージェントルーシーから強引なスカウトを受ける。三姉妹との平和な暮らしを優先し、一度はこれを拒否するグルーだったが…','970761885','https://dl.dropboxusercontent.com/s/lle233j6iqr6xlk/minions_espicableme%202.jpg'),
 ('怪盗グルーのミニオン大脱走','悪党稼業から足を洗った主人公グルーが、新たなライバルや生き別れた双子の兄弟を相手に繰り広げる大騒動の行方を描く。','1033443377','https://dl.dropboxusercontent.com/s/24mssj230ikxzmt/minions_despicableme3.jpg'),
-('美女と野獣','魔女の呪いによって野獣の姿に変えられてしまった王子。心に孤独を抱えながらも、自分の輝きを信じて生きる、ベルと出会うが。','1263521126','https://dl.dropboxusercontent.com/s/wqfs0qijbgn8sp9/beautyandbeast.jpg'),
-
+('美女と野獣','魔女の呪いによって野獣の姿に変えられてしまった王子。心に孤独を抱えながらも、自分の輝きを信じて生きる、ベルと出会うが。','1263521126','https://dl.dropboxusercontent.com/s/wqfs0qijbgn8sp9/beautyandbeast.jpg');

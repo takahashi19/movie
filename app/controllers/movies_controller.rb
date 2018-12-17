@@ -1,8 +1,14 @@
 class MoviesController < ApplicationController
   def home
-  @cinema = Movie.all
-  @reviews = Review.all
-  #Reviws.averege("star",id:chinema_id)OR Mapper？
-  
+      
+   #@ave = Review.group(:id).average(:hyouka)
+   #Reviewテーブルのhyouka（☆の平均を全id分求める）
+   
+    @movies = Movie.includes(:Review).order(star: :desc)
+    #star(星の平均値)順に並べ替え
+    
+    @reviews = Review.page(params[:page])
+    @movies = Movie.page(params[:page])
+    #ページング機能実装に必要な記述
   end
 end

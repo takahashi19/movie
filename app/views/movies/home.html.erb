@@ -16,16 +16,18 @@
   <p>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。</p>
 </div>
 
+<% @movies.each do |movie| %>
 <div class="col-xs-12 text-center">
   <div class="thumbnail">
     <h1>第1位</h1>
     <p>評価</p>
-    <h2>ボヘミアンラプソディー</h2>
-    <img src="https://dl.dropboxusercontent.com/s/m4ye2buogo71l9d/Bohemian.jpg">
+    <h2><%= movie.movie_name %></h2>
+    <img src= <%= movie.image %>>
     <div class="caption" style="font-size: 17px;">
-      <p>ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！ドンドンパッ！</p>
+      <p><%= movie.synopsis %></p>
     </div>
     <a href ="review.html">レビューを見る</a>
+    
   </div>
 </div>
 
@@ -160,8 +162,11 @@
         <p>スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！</p>
       </div>
       <a href ="review.html">レビューを見る</a>
+      
     </div>
   </div>
+  <%= paginate @movies %>
+  <% end %>
 </div>
 
 
