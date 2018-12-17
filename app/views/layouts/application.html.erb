@@ -74,15 +74,22 @@
           </li>
         <% end %>
       </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="キーワードを入力" size="20">
-        </div>
-        <button class="btn btn-primary">検索</button>
-      </form>
+      <%= form_tag movies_path, :method => 'get' do %> <%#　projects[_path]メソッドはモデル名で読みかえること %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+      <!--<form class="navbar-form navbar-right">-->
+      <!--  <div class="form-group">-->
+      <!--    <input type="text" class="form-control" placeholder="キーワードを入力" size="20">-->
+      <!--  </div>-->
+      <!--  <button class="btn btn-primary">検索</button>-->
+      <!--</form>-->
     </div>
   </div>
 </nav>
+
 
 
 
@@ -96,7 +103,7 @@
 
 <%= yield %>
     
-      <%= render 'layouts/footer' %>
+      <%# render 'layouts/footer' %>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   </body>

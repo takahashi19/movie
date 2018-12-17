@@ -1,0 +1,49 @@
+<% @searchs.each do |s| %>
+<div class="row">
+  <div class="col-xs-12 col-md-4 text-center">
+    <div class="thumbnail">
+        <% a = 1%>
+     <% if a==1%>
+      <h3 style="font-size: 25px;"><%= s.movie_name %></h3>
+      <img src="<%= s.image %>">
+      <div class="caption" style="font-size: 17px; height:200px;">
+        <p><%= s.synopsis %></p>
+      </div>
+      <a href ="review.html">レビューを見る</a>
+    </div>
+  </div>
+  <% end %>
+<div class="col-xs-12 col-md-4 text-center">
+    <div class="thumbnail">
+      <p>評価</p>
+      <h3 style="
+      font-size: 25px;
+  "><%= s.movie_name %></h3>
+      <img src="<%= s.image %>">
+      <div class="caption" style="font-size: 17px; height:200px;">
+        <p><%= s.synopsis %></p>
+      </div>
+      <a href ="review.html">レビューを見る</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-4 text-center">
+    <div class="thumbnail">
+      <h2>第4位</h2>
+      <p>評価</p>
+      <h3 style="
+      font-size: 25px;
+  ">文豪スクレイドッグス</h3>
+      <img src="https://dl.dropboxusercontent.com/s/bwcu0mcgrzt8qxl/bungo.jpg">
+      <div class="caption" style="font-size: 17px; height:200px;">
+        <p>リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎</p>
+      </div>
+      <a href ="review.html">レビューを見る</a>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+
+
+
