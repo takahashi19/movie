@@ -10,11 +10,10 @@
     </div>
   </div>
 </div>
-
 <h3 class="page-header">評価</h3>
 
+
 <div class="form-horizontal">
- <div class = "test">
  <%= form_tag("/reviews/create") do %>
   <div class="form-group">
     <div class="col-sm-2"></div>
@@ -51,38 +50,33 @@
       <button class="btn btn-default">クリア</button>
       <input class="btn btn-primary" type="submit" value="書き込む">
     </div>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+
 </div>
-
-
+<!--そもそもどこのユーザーを-->
 <h3 class="page-header">レビュー欄</h3>
-
-<div class="well center-block" style="width:60%;">
-  <h4><%= @cinema.user_name %></h4>コントローラで制御：user_id:1
-  この映画に投稿してるユーザー
-    <div class="evaluation">
-      <% @reviews.hyouka.each do |review|%>この映画名と一致してるユーザーの[hyouka]と一致する場合のフォア文
-      <% if @reviews.hyouka == 5 %>
-      <!--<input id="star1" type="radio" name="hyouka" value="5" />-->
-      <label for="star1">★</label>
-      <% elsif @reviews.hyouka == 4 %>
-      <!--<input id="star2" type="radio" name="hyouka" value="4" />-->
-      <label for="star2">★</label>
-      <% elsif @reviews.hyouka == 3 %>
-      <!--<input id="star3" type="radio" name="hyouka" value="3" />-->
-      <label for="star3">★</label>
-       <% elsif @reviews.hyouka == 2 %>
-      <!--<input id="star4" type="radio" name="hyouka" value="2" />-->
-      <label for="star4"><span class="text">悪い</span>★</label>
-       <% elsif @reviews.hyouka == 1 %>
-      <!--<input id="star5" type="radio" name="hyouka" value="1" />-->
-      <label for="star5"><span class="text">最悪</span>★</label>
+  <div class="well center-block" style="width:60%;">
+    <h4><%= @c.movie_name %></h4>
+      <!--コントローラで制御：user_id:1この映画に投稿してるユーザー-->
+      <div class="evaluation">
+        <!--この映画名と一致してるユーザーの[hyouka]と一致する場合のフォア文-->
+        <% if @reviews.hyouka == 5 %>
+        <label for="star1">★</label>
+        <% elsif @reviews.hyouka == 4 %>
+        <label for="star2">★☆</label>
+        <% elsif @reviews.hyouka == 3 %>
+        <label for="star3">☆★☆<☆/label>
+         <% elsif @reviews.hyouka == 2 %>
+        <label for="star4">★</label>
+         <% elsif @reviews.hyouka == 1 %>
+        <label for="star5">★</label>
       <% end %>
     </div><!-- evaluation -->
   </div>
-  <p><%= @reviews.content %></p>この映画のそのユーザーのレビュー
-</div>
+  <p><%= @reviews.content %></p>
+  <!--この映画のそのユーザーのレビュー-->
+
 <div class="well center-block" style="width:60%;">
   <h4>MJ</h4>
   
@@ -90,9 +84,9 @@
   <p>先週末にボヘミアン・ラプソディー見てから、四六時中、頭の中でレディオ・ガ・ガがヘビロテ中！ #ボヘミアンラプソディ #ボヘミアン胸アツ</p>
 </div>
 
-</div><!-- 全体を囲むコンテナ -->
+<!-- 全体を囲むコンテナ -->
 
-</div>
+
 
 <!--星の表示はif分でも可能-->
 <!--eachで4回だすでも可能-->

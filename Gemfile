@@ -66,6 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb'# 出力結果を表として出力するgem
 gem 'hirb-unicode'# マルチバイト文字の表示を補正するgem
 
-group :development do#バグ解析ツールの
-  gem 'rubocop', require: false
-end
+# group :development do
+  # gem 'rubocop', require: false
+# end
+# gem "rubocop-rails_config"

@@ -14,7 +14,8 @@ class ReviewsController < ApplicationController
   
   def new
     @review = Review.new
-    @cinema = Movie.all
+    @reviews = Review.find_by(id:4)
+    @c = Movie.find_by(id:1)
     
   end
   
