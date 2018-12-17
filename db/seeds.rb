@@ -38,3 +38,4 @@ INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
 ('怪盗グルーのミニオン危機一発','美人エージェントルーシーから強引なスカウトを受ける。三姉妹との平和な暮らしを優先し、一度はこれを拒否するグルーだったが…','970761885','https://dl.dropboxusercontent.com/s/lle233j6iqr6xlk/minions_espicableme%202.jpg'),
 ('怪盗グルーのミニオン大脱走','悪党稼業から足を洗った主人公グルーが、新たなライバルや生き別れた双子の兄弟を相手に繰り広げる大騒動の行方を描く。','1033443377','https://dl.dropboxusercontent.com/s/24mssj230ikxzmt/minions_despicableme3.jpg'),
 ('美女と野獣','魔女の呪いによって野獣の姿に変えられてしまった王子。心に孤独を抱えながらも、自分の輝きを信じて生きる、ベルと出会うが。','1263521126','https://dl.dropboxusercontent.com/s/wqfs0qijbgn8sp9/beautyandbeast.jpg');
+

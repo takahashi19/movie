@@ -63,20 +63,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'hirb'
-# 出力結果を表として出力するgem
-
-gem 'hirb-unicode'
-# マルチバイト文字の表示を補正するgem
-
 
 
 gem 'kaminari', '~> 0.17.0'
 #ページング機能実装用のgem
+=======
+gem 'hirb'# 出力結果を表として出力するgem
+gem 'hirb-unicode'# マルチバイト文字の表示を補正するgem
+
 
 # group :development do
   # gem 'rubocop', require: false
 # end
-# gem "rubocop-rails_config"
-
-gem 'kaminari', '~> 0.17.0'

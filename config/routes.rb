@@ -22,6 +22,7 @@ Rails.application.routes.draw do
    get "users/:id/likes" => "users#likes"
 
 #-----------------こっからReviewーーーーーーーーーーー
+# resources:reviews RESTfulな書き方（index(例ユーザー一覧),show(例個別ユーザーP),new(例：新規登録画面),create（newを受けて生成）,edit（例：既存ユーザの編集）,update（editから更新）,destroy（削除） 7つisnceud viewは4つ）時間あったら変更（）
   get "reviews/index" => "reviews#index"
   get "reviews/new" => "reviews#new"
   get "reviews/:id" => "reviews#show"
