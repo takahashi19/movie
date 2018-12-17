@@ -27,7 +27,7 @@
 
 <body style="padding-top:70px;">
 
-<div class="container">        <!-- 全体を囲むコンテナ -->
+<div class="container"><!-- 全体を囲むコンテナ -->
 
 <!-- ナビゲーション始まり -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -39,12 +39,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">映画</a>
+     
     </div>
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="nav navbar-nav">
         <li class="active">
-          <a href="#">トップ</a>
+            <%= link_to("映画の口コミ", "/") %>
         </li>
         <% if @current_user %>
           <li>
@@ -74,33 +74,25 @@
           </li>
         <% end %>
       </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="キーワードを入力" size="20">
-        </div>
-        <button class="btn btn-primary">検索</button>
-      </form>
+      <%= form_tag movies_path, :method => 'get' do %> <%#　projects[_path]メソッドはモデル名で読みかえること %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+      <!--<form class="navbar-form navbar-right">-->
+      <!--  <div class="form-group">-->
+      <!--    <input type="text" class="form-control" placeholder="キーワードを入力" size="20">-->
+      <!--  </div>-->
+      <!--  <button class="btn btn-primary">検索</button>-->
+      <!--</form>-->
     </div>
   </div>
 </nav>
 
 
-<!DOCTYPE html>
-<html>
 
 
-  <body>
-    <header>
-      <div class="header-logo">
-        <% if @current_user %>
-          <%= link_to("映画の口コミ", "/reviews/index") %>
-        <% else %>
-          <%= link_to("映画の口コミ", "/") %>
-        <% end %>
-      </div>
-
-      </ul>
-    </header>
 
     <% if flash[:notice] %>
       <div class="flash">
@@ -111,7 +103,7 @@
 
 <%= yield %>
     
-      <%= render 'layouts/footer' %>
+      <%# render 'layouts/footer' %>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   </body>
