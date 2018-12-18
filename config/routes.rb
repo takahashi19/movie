@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get "/" => "movies#home"
+  root to: 'movies#home'
+  # get "/" => "movies#home"root toと同じ記述
     
   post "likes/:review_id/create" => "likes#create"
   post "likes/:review_id/destroy" => "likes#destroy"
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
 
 #-----------------こっからReviewーーーーーーーーーーー
 # resources:reviews RESTfulな書き方（index(例ユーザー一覧),show(例個別ユーザーP),new(例：新規登録画面),create（newを受けて生成）,edit（例：既存ユーザの編集）,update（editから更新）,destroy（削除） 7つisnceud viewは4つ）時間あったら変更（）
+#toを使った書き方　get 'messages/:id', to: 'messages#show'
   get "reviews/index" => "reviews#index"
   get "reviews/new" => "reviews#new"
   get "reviews/:id" => "reviews#show"
