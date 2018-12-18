@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  paginates_per 10
+  paginates_per 9
   validates :content, {presence: true, length: {maximum: 140}}
   validates :user_id, {presence: true}
   has_many :movies
