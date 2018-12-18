@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "likes/:review_id/destroy" => "likes#destroy"
 
 #ーーーーーーーーーこっからMovieーーーーーーーーーーー
+  post "movies/:id",to: 'reviews#create'
   resources :movies
   #（仮のルーティングCRUD機能のルーティングはされる）
 

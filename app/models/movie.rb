@@ -15,5 +15,9 @@ class Movie < ApplicationRecord
       Movie.all #全て表示。
     end
   end
+  
+  def user
+    return User.find_by(id: self.user_id)
+  end
 
 end

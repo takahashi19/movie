@@ -17,6 +17,11 @@ class MoviesController < ApplicationController
   end
   
   def show
-    @movie = Movie.find(params［:id)
+    @movie = Movie.find(params [:id])
+    #find = idを指定して検索。映画のIDを受け取る
+    @review = Review.new
+    @reviews = Review.find_by(id:4)
+    # /messages/:id→/messages/2が→params[:id] = 2
+    
   end
 end

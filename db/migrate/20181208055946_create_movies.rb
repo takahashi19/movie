@@ -4,13 +4,14 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       #まだマイグレーションしてないしたらこのコメントアウト解除
       # t.integer: id は自動生成されるため自分では定義しない
       #t.データ型：カラム名で記述
+      
       t.string :movie_name#(30字以内)
       t.string :synopsis#(60)
       t.string :grossing#(20)
       t.string :image
       
       t.timestamps
-      
+      # t.timestamps によって created_at と updated_at カラムが追加される
     end
   end
 end

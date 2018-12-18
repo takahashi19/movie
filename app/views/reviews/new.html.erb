@@ -3,7 +3,7 @@
     <h2>ボヘミアンラプソディー</h2>
     <!--movies.nameを実装-->
    
-    <img src="<%= s.image %>">
+    <img src="<%#= s.image %>">
     <!--画像のカラムの呼び出し-->
     <div class="caption" style="font-size: 17px;">
       <p>t</p>
@@ -66,19 +66,21 @@
         <!--この映画名と一致してるユーザーの[hyouka]と一致する場合のフォア文-->
         <% if @reviews.hyouka == 5 %>
         <!--<input id="star1" type="radio" name="hyouka" value="5" />-->
-        <label for="star1">★</label>
+        <label for="star1">★<★★★★/label>
         <% elsif @reviews.hyouka == 4 %>
         <!--<input id="star2" type="radio" name="hyouka" value="4" />-->
-        <label for="star2">★</label>
+        <label for="star2">★<★★★/label>
         <% elsif @reviews.hyouka == 3 %>
         <!--<input id="star3" type="radio" name="hyouka" value="3" />-->
-        <label for="star3">★</label>
+        <label for="star3">★<★★☆☆/label>
          <% elsif @reviews.hyouka == 2 %>
         <!--<input id="star4" type="radio" name="hyouka" value="2" />-->
-        <label for="star4">★</label>
+        <label for="star4">★<★☆☆☆label>
          <% elsif @reviews.hyouka == 1 %>
+         <span>★☆☆☆☆</span>
+         <>
         <!--<input id="star5" type="radio" name="hyouka" value="1" />-->
-        <label for="star5"><span class="text">最悪</span>★</label>
+     
       <% end %>
     </div><!-- evaluation -->
   </div>
