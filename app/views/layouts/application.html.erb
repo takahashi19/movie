@@ -1,111 +1,109 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
-    <title>映画の口コミ</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="utf-8">
+  <title>映画の口コミ</title>
+  <%= csrf_meta_tags %><!--セキュリティ対策用のコード-->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %><!--CSS を読み込むためのコード-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!--JavaScript を読み込むためのコード-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--bootstrap を読み込むためのコード-->
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!--ファビコン始-->
-<link rel="shortcut icon" href="img/f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" /> 
-<link rel="icon" href="img/f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" />
-<!--ファビコン終-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap JavaScript-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--ファビコン始-->
+  <link rel="shortcut icon" href="f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" /> 
+  <link rel="icon" href="f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" />
+  <!--ファビコン終-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body style="padding-top:70px;">
-
-<div class="container"><!-- 全体を囲むコンテナ -->
-
-<!-- ナビゲーション始まり -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
-        <span class="sr-only">ナビゲーション</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     
-    </div>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="nav navbar-nav">
-        <li class="active">
-            <%= link_to("映画の口コミ", "/") %>
-        </li>
-        <% if @current_user %>
-          <li>
-            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-          </li>
-          <li>
-            <%= link_to("投稿一覧", "/reviews/index") %>
-          </li>
-          <li>
-            <%= link_to("新規投稿", "/reviews/new") %>
-          </li>
-          <li>
-            <%= link_to("ユーザー一覧", "/users/index") %>
-          </li>
-          <li>
-            <%= link_to("ログアウト", "/logout", {method: :review}) %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to("映画の口コミとは", "/about") %>
-          </li>
-          <li>
-            <%= link_to("新規登録", "/signup") %>
-          </li>
-          <li>
-            <%= link_to("ログイン", "/login") %>
-          </li>
-        <% end %>
-      </ul>
-      <%= form_tag movies_path, :method => 'get' do %> <%#　projects[_path]メソッドはモデル名で読みかえること %>
-        <p>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil %>
-        </p>
-      <% end %>
-      <!--<form class="navbar-form navbar-right">-->
-      <!--  <div class="form-group">-->
-      <!--    <input type="text" class="form-control" placeholder="キーワードを入力" size="20">-->
-      <!--  </div>-->
-      <!--  <button class="btn btn-primary">検索</button>-->
-      <!--</form>-->
-    </div>
-  </div>
-</nav>
-
-
-
-
-
+  <div class="container"><!-- 全体を囲むコンテナ -->
+    <!-- ナビゲーション始まり -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+            <span class="sr-only">ナビゲーション</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         
+        </div>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav">
+            <li class="active">
+                <%= link_to("映画の口コミ", "/") %>
+            </li>
+            <% if @current_user %>
+              <li>
+                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+              </li>
+              <li>
+                <%= link_to("投稿一覧", "/reviews/index") %>
+              </li>
+              <li>
+                <%= link_to("新規投稿", "/reviews/new") %>
+              </li>
+              <li>
+                <%= link_to("ユーザー一覧", "/users/index") %>
+              </li>
+              <li>
+                <%= link_to("ログアウト", "/logout", {method: :review}) %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to("映画の口コミとは", "/about") %>
+              </li>
+              <li>
+                <%= link_to("新規登録", "/signup") %>
+              </li>
+              <li>
+                <%= link_to("ログイン", "/login") %>
+              </li>
+            <% end %>
+          </ul>
+          <div class="navbar-form navbar-right">
+            <div class="form-group">
+              <%= form_tag movies_path, :method => 'get' do %> <%#〜_pathとは/messagesのリンクを作る　projects[_path]メソッドはモデル名で読みかえること %>
+              <p>
+              <%# text_field_tag "family-name", "苗字", {class: "text-center"} %>
+              <%= text_field_tag :search,params[:search] ,{class: "form-control",placeholder:"キーワードを入力",size:"20"}%>
+              <!--第一引数:パラメーター名,第二引数:初期値-->
+              </div>
+              <%= submit_tag "検索",:class => "btn btn-primary", :name => nil %>
+              </p>
+          <% end %>
+          </div>
+          <!--<form class="navbar-form navbar-right">-->
+          <!--  <div class="form-group">-->
+          <!--    <input type="text" class="form-control" placeholder="キーワードを入力" size="20">-->
+          <!--  </div>-->
+          <!--  <button class="btn btn-primary">検索</button>-->
+          <!--</form>-->
+        </div>
+      </div>
+    </nav>
     <% if flash[:notice] %>
       <div class="flash">
-        <%= flash[:notice] %>
+       <%= flash[:notice] %>
       </div>
     <% end %>
 
-
-<%= yield %>
-    
-      <%# render 'layouts/footer' %>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-  </body>
-
+    <%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <p class="text-muted text-center">Copyright (c) 2018 Apple Inc. All rights reserved.</p>
+    </div>
+  </footer>
+   <% render 'layouts/footer' %>
+</body>
+ 
 </html>
