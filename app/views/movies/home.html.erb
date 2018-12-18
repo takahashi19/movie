@@ -16,161 +16,35 @@
   <p>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。</p>
 </div>
 
+<% (1..1).each do |m| %>
 <% @movies.each do |movie| %>
-<div class="col-xs-12 text-center">
-  <div class="thumbnail">
-    <h1>第1位</h1>
-    <p>評価</p>
-    <h2><%= movie.movie_name %></h2>
-    <img src= <%= movie.image %>>
-    <div class="caption" style="font-size: 17px;">
-      <p><%= movie.synopsis %></p>
-    </div>
-    <a href ="review.html">レビューを見る</a>
-    
-  </div>
-</div>
 
 <div class="row">
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">
-      <h2>第2位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">バーフバリ</h3>
-      <img src="https://dl.dropboxusercontent.com/s/vjx3ududsxnt9mg/baahu.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ踊るやつ</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第3位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">カメラを止めるな</h3>
-      <img src="https://dl.dropboxusercontent.com/s/kd3f0rvg925s77w/camera.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>カメラ止めないやつカメラ止めないやつカメラ止めないやつカメラ止めないやつカメラ止めないやつ</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第4位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">文豪スクレイドッグス</h3>
-      <img src="https://dl.dropboxusercontent.com/s/bwcu0mcgrzt8qxl/bungo.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎リンゴ林檎</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第5位</h2>
+      <h2>第<%= m %>位</h2>
       <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">バッドジーニアス</h3>
-      <img src="https://dl.dropboxusercontent.com/s/mytd4n3glf52sc1/jinias.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>ジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザスジーザス</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第6位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">万引き家族</h3>
-      <img src="https://dl.dropboxusercontent.com/s/p5ic2ma57hqe9xx/manbiki.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗窃盗</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第7位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">億男</h3>
-      <img src="https://dl.dropboxusercontent.com/s/bvcq269yz9uam2d/million.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>お金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しいお金欲しい</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第8位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">夏目友人帳</h3>
-      <img src="https://dl.dropboxusercontent.com/s/kgs0evk74bumuei/natsume.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>猫が出てくる猫が出てくる猫が出てくる猫が出てくる猫が出てくる猫が出てくる猫が出てくる猫が出てくる</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第9位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">スマホを落としただけなのに</h3>
-      <img src="https://dl.dropboxusercontent.com/s/niziihr2d58y469/smart.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>個人情報流出個人情報流出個人情報流出個人情報流出個人情報流出個人情報流出個人情報流出個人情報流出個人情報流出</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
-    </div>
-  </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
-      <h2>第10位</h2>
-      <p>評価</p>
-      <h3 style="
-      font-size: 25px;
-  ">ヴェノム</h3>
-      <img src="https://dl.dropboxusercontent.com/s/vy1d5ofavo0r360/venom.jpg">
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p>スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！スパイダーマッ！</p>
-      </div>
-      <a href ="review.html">レビューを見る</a>
+      <% if m == m %>
       
+      <h3 style="
+      font-size: 25px;
+  "><%= movie.movie_name %></h3>
+      <img src=<%= movie.image %>>
+      <div class="caption" style="font-size: 17px; height:200px;">
+        <p><%= movie.synopsis %></p>
+      </div>
+      <a href ="review.html">レビューを見る</a>
+ <% end %>
+ 
     </div>
+
   </div>
-  <%= paginate @movies %>
+
   <% end %>
+<% end %>
 </div>
-
-
-
+  <%= paginate @movies %>
 </div>        <!-- 全体を囲むコンテナ -->
 
 <div class="center-block" style="text-align:center;padding-bottom: 10px;">
