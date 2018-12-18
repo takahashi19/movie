@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @reviews = Review.find_by(id:4)
+    # /messages/:id→/messages/2が→params[:id] = 2
     @c = Movie.find_by(id:1)
     
   end

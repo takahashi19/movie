@@ -13,4 +13,8 @@ class MoviesController < ApplicationController
     #ViewのFormで取得したパラメータをモデルに渡す
     @searchs = Movie.search(params[:search])
   end
+  
+  def show
+    @movie = Movie.find(params［:id)
+  end
 end
