@@ -24,7 +24,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(
       content: params[:content],
       hyouka: params[:hyouka],
-      user_id: @current_user.id
+      user_id: @current_user.id,
+      movie_id: params[:movie_id]
     )
     if @review.save
       flash[:notice] = "レビューを投稿しました"

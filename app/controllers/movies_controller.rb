@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
     @reviews = Review.page(params[:page])
     @movies = Movie.page(params[:page])
     #ページング機能実装に必要な記述
+    @news = Whatsnew.find_by(id:1)
+    #？できれば更新日時で降順に並び替えて一番上のだけ取ってくるように
   end
   
   def index
