@@ -3,7 +3,8 @@ class Movie < ApplicationRecord
     validates :movie_name,{length:{maximum:30}}
     validates :synopsis,{length:{maximum:60}}
     validates :grossing,{length:{maximum:20}}
-    belongs_to :reviews
+    has_many :reviews
+    #多くもつというメソッド１対Nを再現MOVIE、ID一つで複数のレビューDBを紐付ける
      Movie.joins(:review)#Movieテーブルとreviewテーブルを連結
    #SELECT movies.*FROM movies INNER JOIN reviews ON reviews.id = movies.id AND reviews.hyouka = `Movie`
     
