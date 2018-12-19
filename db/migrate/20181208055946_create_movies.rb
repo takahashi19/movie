@@ -6,8 +6,8 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       #t.データ型：カラム名で記述
       
       t.string :movie_name#(30字以内)
-      t.string :synopsis#(60)
-      t.string :grossing#(20)
+      t.string :synopsis#(60)映画の紹介文
+      t.string :grossing#(20)興行収入
       t.string :image
       
       t.timestamps

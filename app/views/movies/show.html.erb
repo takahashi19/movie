@@ -1,13 +1,12 @@
 <div class="col-xs-12 text-center">
   <div class="thumbnail">
-    <h2>ボヘミアンラプソディー</h2>
+    <h2><%= @movie.movie_name%></h2>
     <!--movies.nameを実装-->
    
-    <img src="<%#= s.image %>">
+    <img src="<%= @movie.image %>">
     <!--画像のカラムの呼び出し-->
     <div class="caption" style="font-size: 17px;">
-      <p>t</p>
-      <p></p>
+      <p><%= @movie.synopsis%></p>
       <!--紹介文のカラムの呼び出し-->
     </div>
   </div>
@@ -56,43 +55,44 @@
   <% end %>
 
 </div>
-<!--そもそもどこのユーザーを-->
+
 <h3 class="page-header">レビュー欄</h3>
   <div class="well center-block" style="width:60%;">
-    <h4><%= @cinema.user_name %></h4>
-      <!--コントローラで制御：user_id:1この映画に投稿してるユーザー-->
-      <div class="evaluation">
-      <% @reviews.hyouka.each do |review|%>
-        <!--この映画名と一致してるユーザーの[hyouka]と一致する場合のフォア文-->
+    <h4><%= @c.name %></h4>
+      <div>
         <% if @reviews.hyouka == 5 %>
-        <!--<input id="star1" type="radio" name="hyouka" value="5" />-->
-        <label for="star1">★<★★★★/label>
-        <% elsif @reviews.hyouka == 4 %>
-        <!--<input id="star2" type="radio" name="hyouka" value="4" />-->
-        <label for="star2">★<★★★/label>
+        	<span>★★★★★</span>
+          <% elsif @reviews.hyouka == 4 %>
+            <span>★★★★☆</span>
         <% elsif @reviews.hyouka == 3 %>
-        <!--<input id="star3" type="radio" name="hyouka" value="3" />-->
-        <label for="star3">★<★★☆☆/label>
+           <span>★★★☆☆</span>
          <% elsif @reviews.hyouka == 2 %>
-        <!--<input id="star4" type="radio" name="hyouka" value="2" />-->
-        <label for="star4">★<★☆☆☆label>
-         <% elsif @reviews.hyouka == 1 %>
+           <span>★★☆☆☆</span>
+         <% else %>
          <span>★☆☆☆☆</span>
-         <>
-        <!--<input id="star5" type="radio" name="hyouka" value="1" />-->
-     
       <% end %>
-    </div><!-- evaluation -->
+    </div>
+   <p><%= @reviews.content %></p>
   </div>
-  <p><%= @reviews.content %></p>
   <!--この映画のそのユーザーのレビュー-->
 
-<div class="well center-block" style="width:60%;">
-  <h4>MJ</h4>
-  
-  <div>星横</div>
-  <p>先週末にボヘミアン・ラプソディー見てから、四六時中、頭の中でレディオ・ガ・ガがヘビロテ中！ #ボヘミアンラプソディ #ボヘミアン胸アツ</p>
-</div>
+  <div class="well center-block" style="width:60%;">
+    <h4><%= @c.name %></h4>
+      <div>
+        <% if @reviews.hyouka == 5 %>
+        	<span>★★★★★</span>
+          <% elsif @reviews.hyouka == 4 %>
+            <span>★★★★☆</span>
+        <% elsif @reviews.hyouka == 3 %>
+           <span>★★★☆☆</span>
+         <% elsif @reviews.hyouka == 2 %>
+           <span>★★☆☆☆</span>
+         <% else %>
+         <span>★☆☆☆☆</span>
+      <% end %>
+    </div>
+   <p><%= @reviews.content %></p>
+  </div>
 
 <!-- 全体を囲むコンテナ -->
 

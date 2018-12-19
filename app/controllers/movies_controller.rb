@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
     @review = Review.new
     @reviews = Review.find_by(id:4)
     # /messages/:id→/messages/2が→params[:id] = 2
+    @c = User.includes(:Review).order(hyouka: :desc)
     
   end
 end
