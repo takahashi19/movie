@@ -53,7 +53,7 @@ INSERT INTO users(name,email,image_name,password_digest) VALUES
 
 
 
-INSERT INTO reviews(content,hyouka,user_id,chinema_id) VALUES
+INSERT INTO reviews(content,hyouka,user_id,movie_id) VALUES
 ('test1','1','1','1'),
 ('test2','2','1','2'),
 ('test3','5','1','3'),

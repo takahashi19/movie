@@ -3,8 +3,16 @@ class Movie < ApplicationRecord
     validates :movie_name,{length:{maximum:30}}
     validates :synopsis,{length:{maximum:60}}
     validates :grossing,{length:{maximum:20}}
-    belongs_to :reviews
-     Movie.joins(:review)#Movieテーブルとreviewテーブルを連結
+    has_many :reviews
+    
+    attr_accessor :average
+    
+  def average_score
+    self.reviews.sum(:hyouka) / self.reviews.length
+  end
+  # ↑ attr_accessorで一時的に平均スコアを入れる
+    
+  Movie.joins(:review)#Movieテーブルとreviewテーブルを連結
    #SELECT movies.*FROM movies INNER JOIN reviews ON reviews.id = movies.id AND reviews.hyouka = `Movie`
     
   #検索に関する記述

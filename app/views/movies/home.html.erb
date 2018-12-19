@@ -16,16 +16,15 @@
   <p>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。</p>
 </div>
 
-<% (1..1).each do |m| %>
-<% @movies.each do |movie| %>
+<%#(1..30).each do |m| %>
 
+
+<% @movies.each do |movie| %>
 <div class="row">
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">
-
-      <h2>第<%= m %>位</h2>
+      <h2>第<%= movie.id %>位</h2>
       <p>評価</p>
-      <% if m == m %>
       
       <h3 style="
       font-size: 25px;
@@ -35,16 +34,12 @@
         <p><%= movie.synopsis %></p>
       </div>
       <a href ="review.html">レビューを見る</a>
- <% end %>
- 
-    </div>
-
+   </div>
   </div>
-
-  <% end %>
 <% end %>
+<%= paginate @movies %>
 </div>
-  <%= paginate @movies %>
+  
 </div>        <!-- 全体を囲むコンテナ -->
 
 <div class="center-block" style="text-align:center;padding-bottom: 10px;">
