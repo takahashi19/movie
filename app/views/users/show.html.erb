@@ -24,6 +24,7 @@
             <%= link_to(review.user.name, "/users/#{review.user.id}") %>
           </div>
           <%= link_to(review.content, "/reviews/#{review.id}") %>
+          <!--左辺：ユーザーが描いたレビュー右辺：そのユーザーがした投稿に飛ぶページ.本来は映画のshowに飛ぶ必要性あり-->
         </div>
       </div>
     <% end %>

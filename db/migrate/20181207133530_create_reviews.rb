@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.text :content
       t.integer :hyouka
       t.integer :user_id
-      t.integer :chinema_id
+      t.integer :movie_id
 
       t.timestamps
       
