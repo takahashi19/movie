@@ -19,7 +19,7 @@
   <div class="form-group">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
-      <div type="get" action="#">
+      <!--<div type="get" action="#">-->
       <div class="evaluation">
         <input id="star1" type="radio" name="hyouka" value="5" />
         <label for="star1"><span class="text">最高</span>★</label>
@@ -32,7 +32,7 @@
         <input id="star5" type="radio" name="hyouka" value="1" />
         <label for="star5"><span class="text">最悪</span>★</label>
       </div><!-- evaluation -->
-      </div>
+      <!--</div>-->
     </div>
       <% @review.errors.full_messages.each do |message| %>
          <div class="col-sm-6"> <%= message %></div><!--<div class="form-error">-->
@@ -41,10 +41,10 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
     <div class="col-sm-9">
-  
       <textarea name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
     </div>
   </div>
+  <%= hidden_field_tag 'movie_id', @movie.id %>
   
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9 text-right" style="margin-top: 30px;">

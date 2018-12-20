@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by(id: params[:id])
     #find = idを指定して検索。映画のIDを受け取る
     @review = Review.new
-    @reviews = Review.find_by(id:4)#紐付けされた映画のレビューを取得
+    @reviews = Review.find_by(id:4)#紐付けされた映画のレビューを取得（仮でid4を取得）
     # /messages/:id→/messages/2が→params[:id] = 2
     @c = User.includes(:Review).order(hyouka: :desc)
     
