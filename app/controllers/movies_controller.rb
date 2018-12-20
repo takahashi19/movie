@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
     @reviews = Review.page(params[:page])
     @movies = Movie.page(params[:page])
     #ページング機能実装に必要な記述
+    @news = Whatsnew.find_by(id:1)
+    #？できれば更新日時で降順に並び替えて一番上のだけ取ってくるように
   end
   
   def index
@@ -17,6 +19,12 @@ class MoviesController < ApplicationController
   end
   
   def show
-    @movie = Movie.find(params［:id)
+    @movie = Movie.find_by(id: params[:id])
+    #find = idを指定して検索。映画のIDを受け取る
+    @review = Review.new
+    @reviews = Review.find_by(id:4)#紐付けされた映画のレビューを取得（仮でid4を取得）
+    # /messages/:id→/messages/2が→params[:id] = 2
+    @c = User.includes(:Review).order(hyouka: :desc)
+    
   end
 end

@@ -12,20 +12,22 @@
 
 <h3>最新情報</h3>
 <div class="well" style="font-size: 15px;">
-  <p>TOHOシネマズ新宿にてトークショー付き上映の開催が決定いたしました。</p>
-  <p>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。</p>
+  <p><%=@news.news%></p>
+  <!--<p>TOHOシネマズ新宿にてトークショー付き上映の開催が決定いたしました。</p>-->
+  <!--<p>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。</p>-->
 </div>
 
-<% (1..1).each do |m| %>
+
+<%# (1..1).each do |m| %>
 <% @movies.each do |movie| %>
 
 <div class="row">
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">
 
-      <h2>第<%= m %>位</h2>
+      <h2>第<%= [] %>位</h2>
       <p>評価</p>
-      <% if m == m %>
+      <%# if m == m %>
       
       <h3 style="
       font-size: 25px;
@@ -34,15 +36,15 @@
       <div class="caption" style="font-size: 17px; height:200px;">
         <p><%= movie.synopsis %></p>
       </div>
-      <a href ="review.html">レビューを見る</a>
- <% end %>
+       
+      <%= link_to("レビューを書く", "/movies/#{movie.id}") %>
  
+      <!--method:postの記述はルーティングpostを探しにいく-->
     </div>
-
   </div>
 
   <% end %>
-<% end %>
+<%# end %>
 </div>
   <%= paginate @movies %>
 </div>        <!-- 全体を囲むコンテナ -->

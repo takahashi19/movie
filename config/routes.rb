@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "likes/:review_id/destroy" => "likes#destroy"
 
 #ーーーーーーーーーこっからMovieーーーーーーーーーーー
+  post "movies/:id",to: 'reviews#create'
   resources :movies
   #（仮のルーティングCRUD機能のルーティングはされる）
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   post "login" => "users#login"
   post "logout" => "users#logout"
   get "login" => "users#login_form"
-   get "users/:id/likes" => "users#likes"
+  get "users/:id/likes" => "users#likes"
 
 #-----------------こっからReviewーーーーーーーーーーー
 # resources:reviews RESTfulな書き方（index(例ユーザー一覧),show(例個別ユーザーP),new(例：新規登録画面),create（newを受けて生成）,edit（例：既存ユーザの編集）,update（editから更新）,destroy（削除） 7つisnceud viewは4つ）時間あったら変更（）
@@ -33,6 +34,5 @@ Rails.application.routes.draw do
   post "reviews/:id/update" => "reviews#update"
   post "reviews/:id/destroy" => "reviews#destroy"
 
-#   get "/" => "home#top"
   get "about" => "home#about"
 end

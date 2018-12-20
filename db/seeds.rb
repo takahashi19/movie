@@ -53,7 +53,7 @@ INSERT INTO users(name,email,image_name,password_digest) VALUES
 
 
 
-INSERT INTO reviews(content,hyouka,user_id,chinema_id) VALUES
+INSERT INTO reviews(content,hyouka,user_id,movie_id) VALUES
 ('test1','1','1','1'),
 ('test2','2','1','2'),
 ('test3','5','1','3'),
@@ -93,3 +93,12 @@ INSERT INTO reviews(content,hyouka,user_id,chinema_id) VALUES
 ('test28','2','10','8'),
 ('test29','3','10','9'),
 ('test30','1','10','10');
+
+
+
+INSERT INTO whatsnews(news) VALUES
+（'TOHOシネマズ新宿にてトークショー付き上映の開催が決定いたしました。\n当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。'）;
+
+INSERT INTO `whatsnews` (`id`, `news`, `created_at`, `updated_at`) VALUES (1, 'TOHOシネマズ新宿にてトークショー付き上映の 開催が決定いたしました。\\n当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。', '2018-12-15 13:37:43', '2018-12-15 13:37:43')
+
+INSERT INTO `whatsnews` ( `news`) VALUES ('Testシネマズ新宿にてトークショー付き上映の 開催が決定いたしました。<br>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。')

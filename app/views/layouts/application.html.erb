@@ -46,14 +46,14 @@
               <li>
                 <%= link_to("投稿一覧", "/reviews/index") %>
               </li>
-              <li>
-                <%= link_to("新規投稿", "/reviews/new") %>
-              </li>
+              <!--<li>-->
+              <!--  <%# link_to("新規投稿", "/reviews/new") %>-->
+              <!--</li>-->
               <li>
                 <%= link_to("ユーザー一覧", "/users/index") %>
               </li>
               <li>
-                <%= link_to("ログアウト", "/logout", {method: :review}) %>
+                <%= link_to("ログアウト", "/logout", {method: :post}) %>
               </li>
             <% else %>
               <li>
