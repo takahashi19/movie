@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     @reviews = Review.all.order(created_at: :desc)
   end
   
+  
   def show
     @review = Review.find_by(id: params[:id])
     @user = @review.user
@@ -31,7 +32,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "レビューを投稿しました"
       redirect_to("/reviews/index")
     else
-      render("reviews/new")
+      render("movies/:id")
     end
   end
   
