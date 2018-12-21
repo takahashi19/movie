@@ -1,8 +1,6 @@
 <div class="main reviews-index">
   <div class="container">
-    <% if @reviews == nil %>
-    <div>検索結果はありません</div>
-    <% end %>
+
     <% @reviews.each do |review| %>
       <div class="reviews-index-item">
         <div class="review-left">

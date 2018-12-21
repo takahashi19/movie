@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
     @movies = Movie.page(params[:page])
     #ページング機能実装に必要な記述
     
-    @news = Whatsnew.order(updated_at: :desc).limit(1)
+    @newss = Whatsnew.order(updated_at: :desc).limit(1)
     # 新着情報を表示
     #更新日時で降順に並び替えて一番上のだけ取ってくる記述
   end
