@@ -25,18 +25,18 @@
     <!-- ナビゲーション始まり -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
-            <span class="sr-only">ナビゲーション</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+        <!--<div class="navbar-header">-->
+        <!--  <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">-->
+        <!--    <span class="sr-only">ナビゲーション</span>-->
+        <!--    <span class="icon-bar"></span>-->
+        <!--    <span class="icon-bar"></span>-->
+        <!--    <span class="icon-bar"></span>-->
+        <!--  </button>-->
          
-        </div>
+        <!--</div>-->
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
                 <%= link_to("映画の口コミ", "/") %>
             </li>
             <% if @current_user %>
@@ -70,15 +70,12 @@
           <div class="navbar-form navbar-right">
             <div class="form-group">
               <%= form_tag movies_path, :method => 'get' do %> <%#〜_pathとは/messagesのリンクを作る　projects[_path]メソッドはモデル名で読みかえること %>
-              <p>
               <%# text_field_tag "family-name", "苗字", {class: "text-center"} %>
               <%= text_field_tag :search,params[:search] ,{class: "form-control",placeholder:"キーワードを入力",size:"20"}%>
               <!--第一引数:パラメーター名,第二引数:初期値-->
-              </div>
               <%= submit_tag "検索",:class => "btn btn-primary", :name => nil %>
-              </p>
           <% end %>
-          </div>
+
           <!--<form class="navbar-form navbar-right">-->
           <!--  <div class="form-group">-->
           <!--    <input type="text" class="form-control" placeholder="キーワードを入力" size="20">-->
@@ -96,14 +93,10 @@
 
     <%= yield %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
   </div>
-  <footer class="footer">
-    <div class="container">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <p class="text-muted text-center">Copyright (c) 2018 Apple Inc. All rights reserved.</p>
-    </div>
-  </footer>
-   <% render 'layouts/footer' %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   
 </body>
  
 </html>
