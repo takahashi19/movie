@@ -1,3 +1,4 @@
+
 <div class="aaa">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
 
@@ -12,25 +13,21 @@
 
 <h3>最新情報</h3>
 <div class="well" style="font-size: 15px;">
-  <%@newss.each do |n|%>
+   <%@newss.each do |n|%>
   <p><%=n.news%></p>
   <% end %>
-  <!--<p>TOHOシネマズ新宿にてトークショー付き上映の開催が決定いたしました。</p>-->
-  <!--<p>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。</p>-->
 </div>
 
 
-<%# (1..1).each do |m| %>
+<div class="row">
 <% @movies.each do |movie| %>
 
-<div class="row">
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">
-
-      <h2>第<%= [] %>位</h2>
+      <h2>第<%= movie.id %>位</h2>
       <p>評価</p>
-      <%# if m == m %>
       
+    
       <h3 style="
       font-size: 25px;
   "><%= movie.movie_name %></h3>
@@ -38,25 +35,15 @@
       <div class="caption" style="font-size: 17px; height:200px;">
         <p><%= movie.synopsis %></p>
       </div>
-       
-      <%= link_to("レビューを書く", "/movies/#{movie.id}") %>
- 
-      <!--method:postの記述はルーティングpostを探しにいく-->
-    </div>
+         <%= link_to("レビューを書く", "/movies/#{movie.id}") %>
+   </div>
   </div>
-
-  <% end %>
-<%# end %>
+<% end %>
+<%= paginate @movies %>
 </div>
-  <%= paginate @movies %>
+  
 </div>        <!-- 全体を囲むコンテナ -->
 
-<div class="center-block" style="text-align:center;padding-bottom: 10px;">
-  <button type="button" class="btn btn-warning btn-lg">1～10位</button>
-  <button type="button" class="btn btn-warning btn-lg"><a href="index2.html">11～20位</a></button>
-  <button type="button" class="btn btn-warning btn-lg">21～30位</button>
-  <button type="button" class="btn btn-warning btn-lg">31～40位</button>
-  <button type="button" class="btn btn-warning btn-lg">41～50位</button>
-</div>
+
 
 

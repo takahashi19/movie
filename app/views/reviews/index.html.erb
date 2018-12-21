@@ -1,6 +1,5 @@
 <div class="main reviews-index">
   <div class="container">
-
     <% @reviews.each do |review| %>
       <div class="reviews-index-item">
         <div class="review-left">
@@ -10,8 +9,9 @@
           <div class="review-user-name">
             <%= link_to(review.user.name, "/users/#{review.user.id}") %>
           </div>
-          <div><%=@movie.movie_name%></div>
-          <%= link_to(review.content, "/reviews/#{review.id}") %>
+          <div><%# @reviews.movie.movie_name%></div>
+          <div>★☆☆</div>
+          <div><%= link_to(review.content, "/reviews/#{review.id}") %></div>
         </div>
       </div>
       

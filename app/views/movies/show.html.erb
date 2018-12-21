@@ -41,7 +41,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
     <div class="col-sm-9">
-      <textarea name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
+      <textarea rows="6" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
     </div>
   </div>
   <%= hidden_field_tag 'movie_id', @movie.id %>
@@ -55,28 +55,28 @@
   <% end %>
 
 </div>
-
 <h3 class="page-header">レビュー欄</h3>
   <% @reviews.each do |r|%>
   <div class="well center-block" style="width:60%;">
     <h4><%= r.user.name %></h4>
-      <div>
+      <div class="star-rating-icon">
         <% if r.hyouka == 5 %>
-        	<span>★★★★★</span>
+        	<span class="rate rate5"></span>
           <% elsif r.hyouka == 4 %>
-            <span>★★★★☆</span>
+            <span class="rate rate4"></span>
         <% elsif r.hyouka == 3 %>
-           <span>★★★☆☆</span>
+           <span class="rate rate3"></span>
          <% elsif r.hyouka == 2 %>
-           <span>★★☆☆☆</span>
+           <span class="rate rate2"></span>
          <% else %>
-         <span>★☆☆☆☆</span>
+         <span class="rate rate1"></span>
       <% end %>
-    </div>
+    </div><!--star-rating-icon-->
    <p><%= r.content %></p>
   </div>
   <!--この映画のそのユーザーのレビュー-->
   <%end%>
+
 
   
 
