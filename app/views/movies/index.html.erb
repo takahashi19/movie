@@ -1,4 +1,7 @@
 <div class="row">
+<% if @reviews == nil %>
+<div>検索結果はありません</div>
+<% end %>
 <% @searchs.each do |movie| %>
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">
