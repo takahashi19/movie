@@ -1,3 +1,13 @@
+# mysql
+前提としてhas_manyとbe_longtoの実装済み前提
+①Post.all（allによる取得）
+② join(INNER JOIN)（一致してるもののみ取り出し結合させる）
+Post.joins(:user)
+SELECT "posts".* FROM "posts" INNER JOIN "users" ON "users"."id" = "posts"."user_id"
+③includes(LEFT OUTER JOIN)
+LEFT OUTER JOIN=1つ目のテーブルの全データを取り出して、それに2つ目のテーブルのくっつけられるデータをくっつけるやり方（入ってないものもくっつける）
+Post.includes(:user)
+
 
 INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
 
@@ -101,4 +111,4 @@ INSERT INTO whatsnews(news) VALUES
 
 INSERT INTO `whatsnews` (`id`, `news`, `created_at`, `updated_at`) VALUES (1, 'TOHOシネマズ新宿にてトークショー付き上映の 開催が決定いたしました。\\n当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。', '2018-12-15 13:37:43', '2018-12-15 13:37:43')
 
-INSERT INTO `whatsnews` ( `news`) VALUES ('Testシネマズ新宿にてトークショー付き上映の 開催が決定いたしました。<br>当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。')
+INSERT INTO `whatsnews` ( `news`) VALUES ('Testシネマズ新宿にてトークショー付き上映の 開催が決定いたしました。¥n 当日は映画評論家の町山智浩さん（予定）をお迎えしてトークショーを実施いたします。')

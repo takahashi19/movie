@@ -57,42 +57,28 @@
 </div>
 
 <h3 class="page-header">レビュー欄</h3>
+  <% @reviews.each do |r|%>
   <div class="well center-block" style="width:60%;">
-    <h4><%= @c.name %></h4>
+    <h4><%= r.user.name %></h4>
       <div>
-        <% if @reviews.hyouka == 5 %>
+        <% if r.hyouka == 5 %>
         	<span>★★★★★</span>
-          <% elsif @reviews.hyouka == 4 %>
+          <% elsif r.hyouka == 4 %>
             <span>★★★★☆</span>
-        <% elsif @reviews.hyouka == 3 %>
+        <% elsif r.hyouka == 3 %>
            <span>★★★☆☆</span>
-         <% elsif @reviews.hyouka == 2 %>
+         <% elsif r.hyouka == 2 %>
            <span>★★☆☆☆</span>
          <% else %>
          <span>★☆☆☆☆</span>
       <% end %>
     </div>
-   <p><%= @reviews.content %></p>
+   <p><%= r.content %></p>
   </div>
   <!--この映画のそのユーザーのレビュー-->
+  <%end%>
 
-  <div class="well center-block" style="width:60%;">
-    <h4><%= @c.name %></h4>
-      <div>
-        <% if @reviews.hyouka == 5 %>
-        	<span>★★★★★</span>
-          <% elsif @reviews.hyouka == 4 %>
-            <span>★★★★☆</span>
-        <% elsif @reviews.hyouka == 3 %>
-           <span>★★★☆☆</span>
-         <% elsif @reviews.hyouka == 2 %>
-           <span>★★☆☆☆</span>
-         <% else %>
-         <span>★☆☆☆☆</span>
-      <% end %>
-    </div>
-   <p><%= @reviews.content %></p>
-  </div>
+  
 
 <!-- 全体を囲むコンテナ -->
 
