@@ -2,8 +2,8 @@
 
 one:
   user_id: 1
-  reveiws: 1
+  review_id: 1
 
 two:
   user_id: 1
-  reveiws: 1
+  review_id: 1

@@ -12,15 +12,18 @@
         <%= @review.created_at %>
       </div>
       <% if Like.find_by(user_id: @current_user.id, review_id: @review.id) %>
+      <!--もしいいね！済みなら-->
         <%= link_to("/likes/#{@review.id}/destroy", {method: "review"}) do %>
           <span class="fa fa-heart like-btn-unlike"></span>
         <% end %>
       <% else %>
-        <%= link_to("/likes/#{@review.id}/create", {method: "review"}) do %>
+      <!--もしいいねしてなかったら-->
+        <%= link_to("/likes/#{@review.id}/create", {method: "post"}) do %>
           <span class="fa fa-heart like-btn"></span>
         <% end %>
       <% end %>
       <%= @likes_count %>
+      <!--いいねの回数表示-->
       <% if @review.user_id == @current_user.id %>
         <div class="review-menus">
           <%= link_to("編集", "/reviews/#{@review.id}/edit") %>
