@@ -1,0 +1,37 @@
+<!-- いいね専用ページ-->
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <img src="<%= "/user_images/#{@user.image_name}" %>">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+      <% end %>
+    </div>
+    
+    <ul class="user-tabs">
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+    </ul>
+    
+    <!-- -->
+    <% @likes.each do |like| %>
+      <!-- -->
+      <% review = Review.find_by(id: like.review_id) %>
+     
+      
+      <div class="reviews-index-item">
+        <div class="review-left">
+          <img src="<%= "/user_images/#{review.user.image_name}" %>">
+        </div>
+        <div class="review-right">
+          <div class="review-user-name">
+            <%= link_to(review.user.name, "/users/#{review.user.id}") %>
+          </div>
+          <%= link_to(review.content, "/reviews/#{review.id}") %>
+        </div>
+      </div>
+     <% end %>
+  </div>
+</div>

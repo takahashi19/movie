@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
      #moviesテーブルとReviewsを連結する
     
- 
+    @reviews = Review.all
     
      #@reviews = Review.page(params[:page]).per(9).order('star DESC')
      @movies = Movie.page(params[:page]).per(9).order('id DESC')

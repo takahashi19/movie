@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by(id: params[:id])
-
+    @movie = Movie.all
   end
   
   def new
