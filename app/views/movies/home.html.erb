@@ -28,6 +28,31 @@
     <div class="thumbnail">
       <h2>第<%= movie.id %>位</h2>
       <p>評価</p>
+      <div>
+          <%=movie.reviews.count%>
+          <% movie.reviews.each do |r|%>
+          <%#if r.movie_id == movie.id %>
+            <%= @test= r.hyouka%>
+            
+            <%end%>
+            <%end%>
+             
+            <%# test.each do |t|%>
+             <%# sum= 0%>
+             <%# @test.each{|i| sum += i }%>
+             <%#=sum%>
+            <%#end%>
+         <%#@test%>
+            <%#　@test.each do |t|%>
+                <%# a = 0 %>
+                <%# a  t %>
+            <%# end %>
+            <%# @reviews_hyouka = r.reviews.pluck :hyouka%>
+            <%# @test.sum.to_f / @test.count%>
+      <%#reviews_hyouka = movie.reviews.pluck :hyouka%>
+      <%#ave = reviews_hyouka.sum.to_f / reviews_hyouka.count%>
+      </div>
+      
       <%# movie.review.hyouka %>
       <h3 style="
       font-size: 25px;
