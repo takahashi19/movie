@@ -2,15 +2,11 @@ class MoviesController < ApplicationController
   def home
    #@ave = Review.group(:id).average(:hyouka)
    #Reviewテーブルのhyouka（☆の平均を全id分求める）
-   
-     #@ave = Review.group(:movie_id).average(:hyouka)
-     #Reviewテーブルのhyouka（☆の平均を全id分求める）
 
     @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
      #moviesテーブルとReviewsを連結する
     
-     @reviews = Review.joins(:movie) #.order(star :desc)
-     #MovieテーブルとReviewを連結する
+ 
     
      #@reviews = Review.page(params[:page]).per(9).order('star DESC')
      @movies = Movie.page(params[:page]).per(9).order('id DESC')
@@ -30,11 +26,9 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by(id: params[:id])
     #find = idを指定して検索。映画のIDを受け取る
     @review = Review.new
-    @reviews = Review.find_by(id:4)#紐付けされた映画のレビューを取得（仮でid4を取得）
+
     @reviews = Review.order(created_at: :desc).limit(2)
     # /messages/:id→/messages/2が→params[:id] = 2
-    
-    @c = User.includes(:Review).order(hyouka: :desc)
     
   end
 end

@@ -9,25 +9,27 @@ LEFT OUTER JOIN=1つ目のテーブルの全データを取り出して、それ
 Post.includes(:user)
 
 
-INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
+INSERT INTO movies(movie_name,synopsis,grossing,image,created_at,updated_at) VALUES
 
-('007 スカイフォール','ダニエル・クレイグ版3作目のスパイ・アクション大作。MI6への恨みを抱く最強の敵を前に、絶体絶命の窮地に追い込まれる。','1108561013','https://dl.dropboxusercontent.com/s/2len6ipbuq0wa5q/007_skyfall.jpg'),
-('アイアンマン3','彼は何かに取り憑かれたように新型アイアンマン・スーツの開発に没頭。心身共に追い詰められていくトニーだったが…。','1215439994','https://dl.dropboxusercontent.com/s/6nascycobfkfaoj/ironman3.jpg'),
-('アナと雪の女王','王家の姉妹を主人公に、雪の女王となってしまった姉エルサとそんな姉と王国を救うために冒険の旅に出た妹アナの運命を描く。','1279852693','https://dl.dropboxusercontent.com/s/8o9fswfch36od9d/frozon.jpg'),
-('アバター','ジェームズ・キャメロン監督が、3D技術をはじめ最先端の映像テクノロジーを存分に駆使して描くSFアクション超大作。','1263521126','https://dl.dropboxusercontent.com/s/l856zuxxgfm0i0a/avater.jpg'),
-('アベンジャーズ','かつてない異常気象に見舞われた英国。諜報機関は気象学者エマに調査を依頼し、指令を受けたジョンとの共同作業が始まった……。','1519557910','https://dl.dropboxusercontent.com/s/m8ti37u7wg7bjxd/avencers.jpg'),
-('アベンジャーズ/インフィニティ・ウォー','6つ揃うと全宇宙を滅ぼすほどのパワーを秘めた石を狙うサノスの野望を阻止すべく、アベンジャーズが繰り広げる壮絶な戦い。','2046239637','https://dl.dropboxusercontent.com/s/o47xw6yro8wjb8b/civilwar.jpg'),
-('アベンジャーズ/エイジ・オブ・ウルトロン','アイアンマンやハルクはじめスーパー・ヒーローたちによって結成されたドリーム・チーム“アベンジャーズ”を実写化する超大作。','1405035767','https://dl.dropboxusercontent.com/s/pzvgbh23dil59y1/avencers_ageofultoron.jpg'),
-('インクレディブル・ファミリー','Mr．インクレディブルことボブ・パーとその家族を主人公に、恐るべき陰謀に力を合わせて立ち向かうヒーロー一家の活躍を描く。','1227498593','https://dl.dropboxusercontent.com/s/vvwu4nhb1qge3c7/incredibles.jpg'),
-('ジュマンジ/ウェルカム・トゥ・ジャングル','豹の彫像から失われた、エメラルド色の目玉を探し出し、「ジュマンジ」を救出し、ゲームから抜け出さないといけない。','961741163','https://dl.dropboxusercontent.com/s/fez4zjrvhmfah74/jumanji_welcometothejungle.jpg'),
-('ジュラシック・パーク','太古の琥珀に閉じ込められたDNAから遺伝子工学によって蘇った恐竜たちだった。解き放たれた恐竜たちは人間に牙を剥き始めた。','1029153882','https://dl.dropboxusercontent.com/s/vcds3lgthxkmjbj/jurassicpark.jpg'),
-('ジュラシック・ワールド','火山噴火が迫る島から恐竜を救い出そうとする者たちの冒険を描く。監督はJ．A．バヨナ。メインキャストはクリス・プラット。','1668984926','https://dl.dropboxusercontent.com/s/yk66dlp98whoo76/jurassicworld.jpg'),
-('ジュラシック・ワールド/炎の王国','2015年公開映画『ジュラシック・ワールド』の続編。火山噴火が迫る島から恐竜を救い出そうとする者たちの冒険を描く。','1300569140','https://dl.dropboxusercontent.com/s/5l4mkwzx4nz0v20/jurassicpark_fallenkingdom.jpg'),
-('シュレック2','シュレックとフィオナ姫はドンキーが到着すると、ハンサムな王子を期待し歓迎ムードだった全国民はシュレックの容姿を見て愕然。','919838758','https://dl.dropboxusercontent.com/s/r48e05i0ypg66mk/shrek2.jpg'),
-('ズートピア','巷では連続行方不明事件が発生、警察も捜査に追われてんてこまい。ついにジュディにも捜査に参加するチャンスが巡ってくるが…','1023803568','https://dl.dropboxusercontent.com/s/3sn86k9ru1wdrq0/zootopia.jpg'),
-('タイタニック','豪華客船タイタニックが処女航海に出発した。ローズとジャックは船上で運命的に出会い、お互いに強く惹かれていくのだが…。','2186772302','https://dl.dropboxusercontent.com/s/de6lo39fpw3pzmg/titanic.jpg'),
-('トイ・ストーリー3','成長しておもちゃを卒業したアンディの手を離れ、新たな居場所を見つけたが，待ち受ける絶体絶命の危機と心温まる絆を描く。','1063171911','https://dl.dropboxusercontent.com/s/c3ni0pvtw9wh6v6/toystory3.jpg'),
-('パイレーツ・オブ・カリビアン/デッドマンズ・チェスト','海賊なら誰もが恐れる幽霊船フライング・ダッチマン号の船長デイヴィ・ジョーンズにもうじき魂を奪われようとしている。','1066179725','https://dl.dropboxusercontent.com/s/s17ftxcj84irgkv/pairatesofcaribbean_deadmanschest.jpg'),
+('007 スカイフォール','ダニエル・クレイグ版3作目のスパイ・アクション大作。MI6への恨みを抱く最強の敵を前に、絶体絶命の窮地に追い込まれる。','1108561013','https://dl.dropboxusercontent.com/s/2len6ipbuq0wa5q/007_skyfall.jpg','2018-12-20 05:12:55','2018-12-20 05:12:55'),
+('アイアンマン3','彼は何かに取り憑かれたように新型アイアンマン・スーツの開発に没頭。心身共に追い詰められていくトニーだったが…。','1215439994','https://dl.dropboxusercontent.com/s/6nascycobfkfaoj/ironman3.jpg',"2018-12-20 05:12:56","2018-12-20 05:12:56"),
+('アナと雪の女王','王家の姉妹を主人公に、雪の女王となってしまった姉エルサとそんな姉と王国を救うために冒険の旅に出た妹アナの運命を描く。','1279852693','https://dl.dropboxusercontent.com/s/8o9fswfch36od9d/frozon.jpg','2018-12-20 05:12:57','2018-12-20 05:12:57'),
+('アバター','ジェームズ・キャメロン監督が、3D技術をはじめ最先端の映像テクノロジーを存分に駆使して描くSFアクション超大作。','1263521126','https://dl.dropboxusercontent.com/s/l856zuxxgfm0i0a/avater.jpg','2018-12-20 05:12:58','2018-12-20 05:12:58'),
+('アベンジャーズ','かつてない異常気象に見舞われた英国。諜報機関は気象学者エマに調査を依頼し、指令を受けたジョンとの共同作業が始まった……。','1519557910','https://dl.dropboxusercontent.com/s/m8ti37u7wg7bjxd/avencers.jpg''2018-12-20 05:12:59','2018-12-20 05:12:59');
+
+('アベンジャーズ/インフィニティ・ウォー','6つ揃うと全宇宙を滅ぼすほどのパワーを秘めた石を狙うサノスの野望を阻止すべく、アベンジャーズが繰り広げる壮絶な戦い。','2046239637','https://dl.dropboxusercontent.com/s/o47xw6yro8wjb8b/civilwar.jpg','2018-12-20 05:13:00','2018-12-20 05:13:00'),
+('アベンジャーズ/エイジ・オブ・ウルトロン','アイアンマンやハルクはじめスーパー・ヒーローたちによって結成されたドリーム・チーム“アベンジャーズ”を実写化する超大作。','1405035767','https://dl.dropboxusercontent.com/s/pzvgbh23dil59y1/avencers_ageofultoron.jpg','2018-12-20 05:13:01','2018-12-20 05:13:01'),
+('インクレディブル・ファミリー','Mr．インクレディブルことボブ・パーとその家族を主人公に、恐るべき陰謀に力を合わせて立ち向かうヒーロー一家の活躍を描く。','1227498593','https://dl.dropboxusercontent.com/s/vvwu4nhb1qge3c7/incredibles.jpg','2018-12-20 05:13:02','2018-12-20 05:13:02'),
+('ジュマンジ/ウェルカム・トゥ・ジャングル','豹の彫像から失われた、エメラルド色の目玉を探し出し、「ジュマンジ」を救出し、ゲームから抜け出さないといけない。','961741163','https://dl.dropboxusercontent.com/s/fez4zjrvhmfah74/jumanji_welcometothejungle.jpg','2018-12-20 05:13:02','2018-12-20 05:13:02'),
+('ジュラシック・パーク','太古の琥珀に閉じ込められたDNAから遺伝子工学によって蘇った恐竜たちだった。解き放たれた恐竜たちは人間に牙を剥き始めた。','1029153882','https://dl.dropboxusercontent.com/s/vcds3lgthxkmjbj/jurassicpark.jpg','2018-12-20 05:13:03','2018-12-20 05:13:03'),
+('ジュラシック・ワールド','火山噴火が迫る島から恐竜を救い出そうとする者たちの冒険を描く。監督はJ．A．バヨナ。メインキャストはクリス・プラット。','1668984926','https://dl.dropboxusercontent.com/s/yk66dlp98whoo76/jurassicworld.jpg','2018-12-20 05:13:04','2018-12-20 05:13:04'),
+('ジュラシック・ワールド/炎の王国','2015年公開映画『ジュラシック・ワールド』の続編。火山噴火が迫る島から恐竜を救い出そうとする者たちの冒険を描く。','1300569140','https://dl.dropboxusercontent.com/s/5l4mkwzx4nz0v20/jurassicpark_fallenkingdom.jpg','2018-12-20 05:13:05','2018-12-20 05:13:05'),
+('シュレック2','シュレックとフィオナ姫はドンキーが到着すると、ハンサムな王子を期待し歓迎ムードだった全国民はシュレックの容姿を見て愕然。','919838758','https://dl.dropboxusercontent.com/s/r48e05i0ypg66mk/shrek2.jpg','2018-12-20 05:13:06','2018-12-20 05:13:06'),
+('ズートピア','巷では連続行方不明事件が発生、警察も捜査に追われてんてこまい。ついにジュディにも捜査に参加するチャンスが巡ってくるが…','1023803568','https://dl.dropboxusercontent.com/s/3sn86k9ru1wdrq0/zootopia.jpg','2018-12-20 05:13:07','2018-12-20 05:13:07'),
+('タイタニック','豪華客船タイタニックが処女航海に出発した。ローズとジャックは船上で運命的に出会い、お互いに強く惹かれていくのだが…。','2186772302','https://dl.dropboxusercontent.com/s/de6lo39fpw3pzmg/titanic.jpg','2018-12-20 05:13:08','2018-12-20 05:13:08'),
+('トイ・ストーリー3','成長しておもちゃを卒業したアンディの手を離れ、新たな居場所を見つけたが，待ち受ける絶体絶命の危機と心温まる絆を描く。','1063171911','https://dl.dropboxusercontent.com/s/c3ni0pvtw9wh6v6/toystory3.jpg','2018-12-20 05:13:09','2018-12-20 05:13:09'),
+('パイレーツ・オブ・カリビアン/デッドマンズ・チェスト','海賊なら誰もが恐れる幽霊船フライング・ダッチマン号の船長デイヴィ・ジョーンズにもうじき魂を奪われようとしている。','1066179725','https://dl.dropboxusercontent.com/s/s17ftxcj84irgkv/pairatesofcaribbean_deadmanschest.jpg','2018-12-20 05:13:10','2018-12-20 05:13:10'),
+
 ('パイレーツ・オブ・カリビアン/ワールド・エンド','海の中へ消え去ってしまったジャック・スパロウの行方や、強大な陰謀に立ち向かう海賊たちの戦いが壮大なスケールで描かれる。','963420425','https://dl.dropboxusercontent.com/s/62ww1ytpzz7lvdo/piratesofcaribbean_atworldsend.jpg'),
 ('パイレーツ・オブ・カリビアン/生命の泉','永遠の生命をもたらすという生命の泉を目指そうとしていた。泉の場所を知るジャックを泉探しの旅に巻き込んでいくのだが…。','1043871802','https://dl.dropboxusercontent.com/s/7x6obbv84d29yfr/pairatesodcaribbean_onstrangertides.jpg'),
 ('ハリー・ポッターと賢者の石 ','魔法使いになるための勉強を始める。楽しい毎日を送るハリーだったが、やがて学校に隠された驚くべき秘密に気づくのだった……','974755371','https://dl.dropboxusercontent.com/s/3j13zld7ooxowgf/harrypotterand%20thephilosopher%27s%20stone.jpg'),
@@ -49,40 +51,60 @@ INSERT INTO movies(movie_name,synopsis,grossing,image) VALUES
 ('怪盗グルーのミニオン大脱走','悪党稼業から足を洗った主人公グルーが、新たなライバルや生き別れた双子の兄弟を相手に繰り広げる大騒動の行方を描く。','1033443377','https://dl.dropboxusercontent.com/s/24mssj230ikxzmt/minions_despicableme3.jpg'),
 ('美女と野獣','魔女の呪いによって野獣の姿に変えられてしまった王子。心に孤独を抱えながらも、自分の輝きを信じて生きる、ベルと出会うが。','1263521126','https://dl.dropboxusercontent.com/s/wqfs0qijbgn8sp9/beautyandbeast.jpg');
 
-INSERT INTO users(name,email,image_name,password_digest) VALUES
-('test1','test1@gmail.com','default_user.jpg','test1'),
-('test2','test2@gmail.com','default_user.jpg','test2'),
-('test3','test3@gmail.com','default_user.jpg','test3'),
-('test4','test4@gmail.com','default_user.jpg','test4'),
-('test5','test5@gmail.com','default_user.jpg','test5'),
-('test6','test6@gmail.com','default_user.jpg','test6'),
-('test7','test7@gmail.com','default_user.jpg','test7'),
-('test8','test8@gmail.com','default_user.jpg','test8'),
-('test9','test9@gmail.com','default_user.jpg','test9'),
-('test10','test10@gmail.com','default_user.jpg','test10');
+INSERT INTO users(name,email,image_name,password_digest,created_at,update_at) VALUES
+('test1','test1@gmail.com','default_user.jpg','test1','2018-12-20 05:13:00','2018-12-20 05:13:00'),
+('test2','test2@gmail.com','default_user.jpg','test2','2018-12-20 05:13:01','2018-12-20 05:13:01'),
+('test3','test3@gmail.com','default_user.jpg','test3','2018-12-20 05:13:02','2018-12-20 05:13:02'),
+('test4','test4@gmail.com','default_user.jpg','test4','2018-12-20 05:13:03','2018-12-20 05:13:03'),
+('test5','test5@gmail.com','default_user.jpg','test5','2018-12-20 05:13:04','2018-12-20 05:13:04'),
+
+('test6','test6@gmail.com','default_user.jpg','test6','2018-12-20 05:13:05','2018-12-20 05:13:05'),
+('test7','test7@gmail.com','default_user.jpg','test7','2018-12-20 05:13:06','2018-12-20 05:13:06'),
+('test8','test8@gmail.com','default_user.jpg','test8','2018-12-20 05:13:07','2018-12-20 05:13:07'),
+('test9','test9@gmail.com','default_user.jpg','test9','2018-12-20 05:13:08','2018-12-20 05:13:08'),
+('test10','test10@gmail.com','default_user.jpg','test10','2018-12-20 05:13:09','2018-12-20 05:13:09');
 
 
 
-INSERT INTO reviews(content,hyouka,user_id,movie_id) VALUES
-('test1','1','1','1'),
-('test2','2','1','2'),
-('test3','5','1','3'),
+INSERT INTO reviews(content,hyouka,user_id,movie_id,created_at,update_at) VALUES
+('test1','1','1','1','2018-12-20 05:13:01','2018-12-20 05:13:01'),
+('test2','2','1','2','2018-12-20 05:13:02','2018-12-20 05:13:02'),
+('test3','5','1','3','2018-12-20 05:13:03','2018-12-20 05:13:03'),
+('test4','2','2','4','2018-12-20 05:13:04','2018-12-20 05:13:04'),
+('test5','4','2','5','2018-12-20 05:13:05','2018-12-20 05:13:05'),
+('test6','5','2','1','2018-12-20 05:13:06','2018-12-20 05:13:06'),
+('test7','4','3','2','2018-12-20 05:13:07','2018-12-20 05:13:07'),
+('test8','1','3','3','2018-12-20 05:13:08','2018-12-20 05:13:08'),
+('test9','4','3','4','2018-12-20 05:13:09','2018-12-20 05:13:09'),
+('test10','5','4','5','2018-12-20 05:13:10','2018-12-20 05:13:09'),
+('test11','4','4','1','2018-12-20 05:13:11','2018-12-20 05:13:10'),
+('test12','1','4','2','2018-12-20 05:13:12','2018-12-20 05:13:11'),
+('test13','2','5','3','2018-12-20 05:13:13','2018-12-20 05:13:12'),
+('test14','4','5','4','2018-12-20 05:13:14','2018-12-20 05:13:14'),
+('test15','5','5','5','2018-12-20 05:13:15','2018-12-20 05:13:15'),
 
-('test4','2','2','4'),
-('test5','4','2','5'),
-('test6','5','2','6'),
 
-('test7','4','3','7'),
-('test8','1','3','8'),
-('test9','4','3','9'),
 
-('test10','5','4','10'),
-('test11','4','4','1'),
-('test12','1','4','2'),
 
-('test13','2','5','3'),
-('test14','4','5','4'),
-('test15','5','5','5'),
+('test1','1','1','37','2018-12-20 05:13:01','2018-12-20 05:13:01'),
+('test2','2','1','37','2018-12-20 05:13:02','2018-12-20 05:13:02'),
+('test3','5','1','37','2018-12-20 05:13:03','2018-12-20 05:13:03'),
+
+('test4','2','2','4','2018-12-20 05:13:04','2018-12-20 05:13:04'),
+('test5','4','2','5','2018-12-20 05:13:05','2018-12-20 05:13:05'),
+('test6','5','2','6','2018-12-20 05:13:06','2018-12-20 05:13:06'),
+
+('test7','4','3','7','2018-12-20 05:13:07','2018-12-20 05:13:07'),
+('test8','1','3','8','2018-12-20 05:13:08','2018-12-20 05:13:08'),
+('test9','4','3','9','2018-12-20 05:13:09','2018-12-20 05:13:09'),
+
+('test10','5','4','10','2018-12-20 05:13:10','2018-12-20 05:13:09'),
+('test11','4','4','1','2018-12-20 05:13:11','2018-12-20 05:13:10'),
+('test12','1','4','2','2018-12-20 05:13:12','2018-12-20 05:13:11'),
+
+('test13','2','5','3','2018-12-20 05:13:13','2018-12-20 05:13:12'),
+('test14','4','5','4','2018-12-20 05:13:14','2018-12-20 05:13:14'),
+('test15','5','5','5','2018-12-20 05:13:15','2018-12-20 05:13:15'),
 
 ('test16','3','6','6'),
 ('test17','3','6','7'),

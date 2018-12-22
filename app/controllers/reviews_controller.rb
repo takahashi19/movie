@@ -3,8 +3,11 @@ class ReviewsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
   
   def index
-    @reviews = Review.all.order(created_at: :desc)
+    @reviews = Review.includes(:movie).all.order(created_at: :desc)
     # @reviews = Review.all.order(created_at: :desc)
+    # @movie = Movie.find_by(id: @reviews.movie_id)
+    @movie = Movie.all
+    
   end
   
   def show
@@ -26,6 +29,7 @@ class ReviewsController < ApplicationController
       content: params[:content],
       hyouka: params[:hyouka],
       user_id: @current_user.id,
+      #新規投稿時に現在ログインしている@current_userユーザーIDを加える
       movie_id: params[:movie_id]
     )
     if @review.save
