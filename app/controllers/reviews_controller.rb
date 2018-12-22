@@ -32,7 +32,18 @@ class ReviewsController < ApplicationController
       #新規投稿時に現在ログインしている@current_userユーザーIDを加える
       movie_id: params[:movie_id]
     )
+    @movies = Movie.all
     if @review.save
+      @aves = Review.group(:movie_id).average(:hyouka)
+      @movies.each do | movie |
+        @aves.each{|key, val|
+          if key == movie.id
+            movie.star = val
+            movie.save
+          end
+        }
+      end
+    ##追加ここまで
       flash[:notice] = "レビューを投稿しました"
       redirect_to("/reviews/index")
     else
