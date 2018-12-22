@@ -16,6 +16,8 @@
    <%@newss.each do |n|%>
   <p><%=n.news%></p>
   <% end %>
+  <div>
+ </div>
 </div>
 
 
@@ -26,8 +28,7 @@
     <div class="thumbnail">
       <h2>第<%= movie.id %>位</h2>
       <p>評価</p>
-      
-    
+      <%# movie.review.hyouka %>
       <h3 style="
       font-size: 25px;
   "><%= movie.movie_name %></h3>

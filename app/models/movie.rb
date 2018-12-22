@@ -1,9 +1,10 @@
 class Movie < ApplicationRecord
+    has_many :reviews
     paginates_per 9
     validates :movie_name,{length:{maximum:30}}
     validates :synopsis,{length:{maximum:60}}
     validates :grossing,{length:{maximum:20}}
-    has_many :reviews
+    
   #   #多くもつというメソッド１対Nを再現MOVIE、ID一つで複数のレビューDBを紐付ける。Sの複数形
   #   Movie.joins(:review)#Movieテーブルとreviewテーブルを連結
   # #SELECT movies.*FROM movies INNER JOIN reviews ON reviews.id = movies.id AND reviews.hyouka = `Movie`
