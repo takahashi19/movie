@@ -23,10 +23,33 @@
           <div class="review-user-name">
             <%= link_to(review.user.name, "/users/#{review.user.id}") %>
           </div>
-          <%= link_to(review.content, "/reviews/#{review.id}") %>
-          <!--左辺：ユーザーが描いたレビュー右辺：そのユーザーがした投稿に飛ぶページ.本来は映画のshowに飛ぶ必要性あり-->
+          <div>
+          <% @movie.each do |r|%>
+          <%if r.id == review.movie_id %>
+            <%=r.movie_name %>
+            <%end%>
+          <%end%>
+          <!--includesが上手くいかないためeach文に変更-->
+          </div>
+          
+          <div class="star-rating-icon">
+            <% if review.hyouka == 5 %>
+        	    <span class="rate rate5"></span>
+            <% elsif review.hyouka == 4 %>
+              <span class="rate rate4"></span>
+            <% elsif review.hyouka == 3 %>
+              <span class="rate rate3"></span>
+            <% elsif review.hyouka == 2 %>
+               <span class="rate rate2"></span>
+            <% else %>
+            <span class="rate rate1"></span>
+            <% end %>
+          </div><!--star-rating-icon-->
+          <div><%= link_to(review.content, "/reviews/#{review.id}") %></div>
         </div>
       </div>
+      
     <% end %>
   </div>
 </div>
+
