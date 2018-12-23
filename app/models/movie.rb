@@ -16,6 +16,7 @@ class Movie < ApplicationRecord
   def self.search(search) #self.でクラスメソッドとしている
     if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
       Movie.where(['movie_name LIKE ?', "%#{search}%"])
+      # SELECT * FROM books WHERE name LIKE '%search%';と同じSQL分で名前と一致する検索を？の中に入れて支持をだす
     else
       Movie.all #全て表示。
     end
