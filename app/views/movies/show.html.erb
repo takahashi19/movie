@@ -60,21 +60,48 @@
     <h4>ユーザー名：<%= r.user.name %></h4>
       <div class="star-rating-icon">
         <% if r.hyouka == 5 %>
-        	<span class="rate rate5"></span>
-          <% elsif r.hyouka == 4 %>
-            <span class="rate rate4"></span>
-        <% elsif r.hyouka == 3 %>
-           <span class="rate rate3"></span>
-         <% elsif r.hyouka == 2 %>
-           <span class="rate rate2"></span>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:100%;"></div>
+          </div>
+        <% elsif r.hyouka >= 4.5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:90%;"></div>
+          </div>
+        <% elsif r.hyouka >= 4 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:80%;"></div>
+          </div>
+        <% elsif r.hyouka >= 3.5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:69%;"></div>
+          </div>
+        <% elsif r.hyouka >= 3 %>
+            <div class="star-rating">
+            <div class="star-rating-item" style="width:59%;"></div>
+          </div>
+        <% elsif r.hyouka >= 2.5 %>
+           <div class="star-rating">
+            <div class="star-rating-item" style="width:50%;"></div>
+          </div>
+        <% elsif r.hyouka >= 2 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:40%;"></div>
+          </div>
+        <% elsif r.hyouka >= 1.5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:29%;"></div>
+          </div>
          <% else %>
-         <span class="rate rate1"></span>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:19%;"></div>
+          </div>
       <% end %>
     </div><!--star-rating-icon-->
    <p><%= r.content %></p>
   </div>
   <!--この映画のそのユーザーのレビュー-->
   <%end%>
+
 
 
   
