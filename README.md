@@ -20,7 +20,7 @@
   <li>新着情報表示機能</li>
 </ul>
 <h2>DBとテーブル定義</h2>
- <p><p/>
+ <p>https://docs.google.com/spreadsheets/d/1i063MjmQytQf_ecQk_d9eKVQPmjglqEVVJUVBi9epvI/edit?usp=sharing<p/>
 <h2>使用したgem</h2>
 <ul>
   <li>rubocop</li>
