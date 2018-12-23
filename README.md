@@ -29,4 +29,4 @@
   <li>hirb-unicode</li>
   <li>bcrypt</li>
   </ul>
-<p>※開発環境や手法等はWikiに記載</p>
+<p>※その他開発環境や手法等はWikiに記載</p>
