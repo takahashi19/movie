@@ -33,19 +33,17 @@
 <%end%>
 <!--トップ30位までの「順位を表示する」ためにsumを定義。それ以上順位を増やす場合はelseifをたす必要性あり-->
  
-<div class="row">
+  <div class="row">
   <!--#順位をだすための変数を定義-->
-<% @movies.each do |movie| %>
-
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
+  <% @movies.each do |movie| %>
+    <div class="col-xs-12 col-md-4 text-center">
+      <div class="thumbnail">
 
        <% sum+=1%>
       <h2>第<%= sum%>位</h2>
       <% if movie.star %>
         <div class="star-rating-icon">
         <span>評価：</span>
-      <div class="star-rating-icon">
         <% if movie.star == 5 %>
           <div class="star-rating">
             <div class="star-rating-item" style="width:100%;"></div>
