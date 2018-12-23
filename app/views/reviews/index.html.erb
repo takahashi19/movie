@@ -12,7 +12,7 @@
           <div>
           <% @movie.each do |r|%>
           <%if r.id == review.movie_id %>
-            <%=r.movie_name %>
+            映画名：<%=r.movie_name %>
             <%end%>
           <%end%>
           <!--includesが上手くいかないためeach文に変更-->

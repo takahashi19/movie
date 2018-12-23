@@ -8,8 +8,7 @@ class MoviesController < ApplicationController
     
     @reviews = Review.all
     
-     #@reviews = Review.page(params[:page]).per(9).order('star DESC')
-     @movies = Movie.page(params[:page]).per(9).order('star DESC')
+    @movies = Movie.page(params[:page]).per(9).order('star DESC')
      #ページング機能実装に必要な記述、star(星の平均値)順に並べ替え
      
     @newss = Whatsnew.order(updated_at: :desc).limit(1)

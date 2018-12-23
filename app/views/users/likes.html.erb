@@ -15,23 +15,41 @@
       <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
     
-    <!-- -->
-    <% @likes.each do |like| %>
-      <!-- -->
-      <% review = Review.find_by(id: like.review_id) %>
-     
-      
-      <div class="reviews-index-item">
-        <div class="review-left">
+  <% @likes.each do |like| %>
+  <% review = Review.find_by(id: like.review_id) %>
+  <div class="reviews-index-item">
+    <div class="review-left">
           <img src="<%= "/user_images/#{review.user.image_name}" %>">
-        </div>
+    </div>
         <div class="review-right">
           <div class="review-user-name">
             <%= link_to(review.user.name, "/users/#{review.user.id}") %>
           </div>
-          <%= link_to(review.content, "/reviews/#{review.id}") %>
+           <div>
+          <% @movie.each do |r|%>
+          <%if r.id == review.movie_id %>
+            映画名：<%=r.movie_name %>
+            <%end%>
+          <%end%>
+          <!--includesが上手くいかないためeach文に変更-->
+          </div>
+          <div class="star-rating-icon">
+            <% if review.hyouka == 5 %>
+        	    <span class="rate rate5"></span>
+            <% elsif review.hyouka == 4 %>
+              <span class="rate rate4"></span>
+            <% elsif review.hyouka == 3 %>
+              <span class="rate rate3"></span>
+            <% elsif review.hyouka == 2 %>
+               <span class="rate rate2"></span>
+            <% else %>
+            <span class="rate rate1"></span>
+            <% end %>
+          </div><!--star-rating-icon-->
+          <div><%= link_to(review.content, "/reviews/#{review.id}") %></div>
         </div>
+        </div>
+        <% end %>
       </div>
-     <% end %>
-  </div>
-</div>
+      </div>
+     

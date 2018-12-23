@@ -26,7 +26,7 @@
           <div>
           <% @movie.each do |r|%>
           <%if r.id == review.movie_id %>
-            <%=r.movie_name %>
+          映画名：<%=r.movie_name %>
             <%end%>
           <%end%>
           <!--includesが上手くいかないためeach文に変更-->
@@ -45,7 +45,7 @@
             <span class="rate rate1"></span>
             <% end %>
           </div><!--star-rating-icon-->
-          <div><%= link_to(review.content, "/reviews/#{review.id}") %></div>
+          <div class="review-content"><%= link_to(review.content, "/reviews/#{review.id}") %></div>
         </div>
       </div>
       
