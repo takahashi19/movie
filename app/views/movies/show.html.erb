@@ -57,7 +57,7 @@
 <h3 class="page-header">レビュー欄</h3>
   <% @reviews.each do |r|%>
   <div class="well center-block" style="width:60%;">
-    <h4><%= r.user.name %></h4>
+    <h4>ユーザー名：<%= r.user.name %></h4>
       <div class="star-rating-icon">
         <% if r.hyouka == 5 %>
         	<span class="rate rate5"></span>

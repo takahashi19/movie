@@ -6,10 +6,8 @@ class Movie < ApplicationRecord
     validates :grossing,{length:{maximum:20}}
     
   #   #多くもつというメソッド１対Nを再現MOVIE、ID一つで複数のレビューDBを紐付ける。Sの複数形
-  #   Movie.joins(:review)#Movieテーブルとreviewテーブルを連結
-  # #SELECT movies.*FROM movies INNER JOIN reviews ON reviews.id = movies.id AND reviews.hyouka = `Movie`
-  #   # @movies = Movie.includes(:review).order(hyouka: :desc)
-  # # a = Movie.last.reviews.pluck(:hyouka).mean
+  # @movies = Movie.includes(:review).order(hyouka: :desc)
+  # a = Movie.last.reviews.pluck(:hyouka).mean
   # #a./a.count
   
   #検索に関する記述

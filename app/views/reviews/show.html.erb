@@ -5,6 +5,7 @@
         <img src="<%= "/user_images/#{@user.image_name}" %>">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
+      <p>映画名：<%=@review.movie.movie_name%></p>
       <p>
         <%= @review.content %>
       </p>
@@ -24,7 +25,9 @@
       <% end %>
       <%= @likes_count %>
       <!--いいねの回数表示-->
+      
       <% if @review.user_id == @current_user.id %>
+      <!--ログインユーザーと投稿ユーザーが一致しているならば編集できる仕様-->
         <div class="review-menus">
           <%= link_to("編集", "/reviews/#{@review.id}/edit") %>
           <%= link_to("削除", "/reviews/#{@review.id}/destroy", {method: "review"}) %>

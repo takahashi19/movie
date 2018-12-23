@@ -33,6 +33,7 @@ class ReviewsController < ApplicationController
       #新規投稿時に現在ログインしている@current_userユーザーIDを加える
       movie_id: params[:movie_id]
     )
+   
     @movies = Movie.all
     if @review.save
       @aves = Review.group(:movie_id).average(:hyouka)
@@ -44,14 +45,20 @@ class ReviewsController < ApplicationController
           end
         }
       end
-    ##追加ここまで
+      #hyoukaを計算させて平均値をstarに代入したもの
       flash[:notice] = "レビューを投稿しました"
       redirect_to("/reviews/index")
     else
-      render("movies/:id")
+      flash[:notice] = "投稿に失敗しました"
+      @movie = Movie.find_by(id: params[:movie_id])
+      @review = Review.new
+      @reviews = @movie.reviews.order(created_at: :desc).limit(2)
+      render "movies/show"
     end
+    
   end
   
+  #{@movie.movie.id}
   def edit
     @review = Review.find_by(id: params[:id])
   end
