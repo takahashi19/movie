@@ -2,8 +2,6 @@
 <div class="aaa">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
 
-
-
 <div class="jumbotron"
      style="color:#020202; text-shadow: 2px 2px 4px #666; 
             height:300px; background:url(https://dl.dropboxusercontent.com/s/sepl7lftw4fob1r/kutsu_180427eigadorobo01.jpg); background-size:cover;">
@@ -21,14 +19,30 @@
 </div>
 
 
+<%a = params[:page].to_i%>
+<%if a == 0%>
+<%sum = 0%>
+ <%elsif a == 2%>
+ <%sum =9 %>
+ <%elsif a == 3%>
+ <%sum = 18%>
+ <%elsif a == 4%>
+ <%sum = 27 %>
+ <%elsif a == 5%>
+ <sum = "X">
+<%end%>
+<!--トップ30位までの「順位を表示する」ためにsumを定義。それ以上順位を増やす場合はelseifをたす必要性あり-->
+ 
 <div class="row">
+  <!--#順位をだすための変数を定義-->
 <% @movies.each do |movie| %>
 
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">
-      <h2>第<%= movie.id %>位</h2>
+
+       <% sum+=1%>
+      <h2>第<%= sum%>位</h2>
       <% if movie.star %>
-         
         <div class="star-rating-icon">
         <span>評価：</span>
         <% if movie.star >= 5 %>
@@ -61,10 +75,11 @@
          <%= link_to("レビューを書く", "/movies/#{movie.id}") %>
    </div>
   </div>
+ 
 <% end %>
-<%= paginate @movies %>
+
 </div>
-  
+  <div><%= paginate @movies %></div>
 </div>        <!-- 全体を囲むコンテナ -->
 
 

@@ -41,7 +41,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
     <div class="col-sm-9">
-      <textarea rows="6" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
+      <textarea rows="6" placeholder="レビューを入力してください。" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
     </div>
   </div>
   <%= hidden_field_tag 'movie_id', @movie.id %>
@@ -53,7 +53,6 @@
     </div>
   </div>
   <% end %>
-
 </div>
 <h3 class="page-header">レビュー欄</h3>
   <% @reviews.each do |r|%>
