@@ -33,38 +33,57 @@
 <%end%>
 <!--トップ30位までの「順位を表示する」ためにsumを定義。それ以上順位を増やす場合はelseifをたす必要性あり-->
  
-<div class="row">
+  <div class="row">
   <!--#順位をだすための変数を定義-->
-<% @movies.each do |movie| %>
-
-  <div class="col-xs-12 col-md-4 text-center">
-    <div class="thumbnail">
+  <% @movies.each do |movie| %>
+    <div class="col-xs-12 col-md-4 text-center">
+      <div class="thumbnail">
 
        <% sum+=1%>
       <h2>第<%= sum%>位</h2>
       <% if movie.star %>
         <div class="star-rating-icon">
         <span>評価：</span>
-        <% if movie.star >= 5 %>
-          <span class="rate rate5"></span>
+        <% if movie.star == 5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:100%;"></div>
+          </div>
+        <% elsif movie.star >= 4.5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:90%;"></div>
+          </div>
         <% elsif movie.star >= 4 %>
-          <span class="rate rate4"></span>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:80%;"></div>
+          </div>
+        <% elsif movie.star >= 3.5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:69%;"></div>
+          </div>
         <% elsif movie.star >= 3 %>
-           <span class="rate rate3"></span>
+            <div class="star-rating">
+            <div class="star-rating-item" style="width:59%;"></div>
+          </div>
+        <% elsif movie.star >= 2.5 %>
+           <div class="star-rating">
+            <div class="star-rating-item" style="width:50%;"></div>
+          </div>
         <% elsif movie.star >= 2 %>
-          <span class="rate rate2"></span>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:40%;"></div>
+          </div>
+        <% elsif movie.star >= 1.5 %>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:29%;"></div>
+          </div>
          <% else %>
-         <span class="rate rate1"></span>
+          <div class="star-rating">
+            <div class="star-rating-item" style="width:19%;"></div>
+          </div>
       <% end %>
-    </div><!--star-rating-icon-->
-        <% end %>
-          <%#movie.reviews.count%>
-          <%# movie.reviews.each do |r|%>
-          <%#if r.movie_id == movie.id %>
-            <%# @test= r.hyouka%>
-            <%#end%><%#end%>
       
-      <%# movie.review.hyouka %>
+    </div><!--star-rating-icon--><!--star-rating-icon-->
+
       <h3 style="
       font-size: 12px;
   "><%= movie.movie_name %></h3>
@@ -75,7 +94,7 @@
          <%= link_to("レビューを書く", "/movies/#{movie.id}",class: 'btn btn-primary') %>
    </div>
   </div>
- 
+ <%end%>
 <% end %>
 
 </div>
