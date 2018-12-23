@@ -1,11 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+映画の口コミ
 
-Things you may want to cover:
+<h1>概要</h1>
+映画の感想をシェアして楽しむSNSアプリ
 
-* Ruby version
 
 * System dependencies
 
