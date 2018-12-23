@@ -45,7 +45,8 @@ class ReviewsController < ApplicationController
           end
         }
       end
-      #hyoukaを計算させて平均値をstarに代入したもの
+
+    #hyoukaを計算させて平均値をstarに代入したもの
       flash[:notice] = "レビューを投稿しました"
       redirect_to("/reviews/index")
     else
