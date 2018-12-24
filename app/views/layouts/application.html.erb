@@ -31,6 +31,7 @@
                 <%= link_to("映画の口コミ", "/") %>
             </li>
             <% if @current_user %>
+            <!--current_user（現在のユーザー）といういう意味。ログインされてるナビバー-->
               <li>
                 <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
               </li>
@@ -44,6 +45,7 @@
                 <%= link_to("ログアウト", "/logout", {method: :post}) %>
               </li>
             <% else %>
+            <!--ログインしてない状態のナビバー-->
               <li>
                 <%= link_to("映画の口コミとは", "/about") %>
               </li>

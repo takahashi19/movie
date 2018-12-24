@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  #  ApplicationControllerコントローラーを継承するための記述
+  # ログインしてなくてもmoviesは使える仕様
   def home
      # @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
      #moviesテーブルとReviewsを連結する
@@ -21,9 +23,9 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by(id: params[:id])
     #find = idを指定して検索。映画のIDを受け取る
     @review = Review.new
-
-    @reviews = Review.order(created_at: :desc).limit(2)
-    # /messages/:id→/messages/2が→params[:id] = 2
+    
+    @reviews = @movie.reviews.order(created_at: :desc).limit(2)
+    # とりあえず二件で取得
     
   end
 end

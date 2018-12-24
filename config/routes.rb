@@ -19,8 +19,11 @@ Rails.application.routes.draw do
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
   post "login" => "users#login"
+  # 新規登録：フォームの値を送信するためpost:form_tagメソッドがデフォルトでpostを探す
   get "login" => "users#login_form"
+  # 新規登録：get→link_toメソッドはデフォルトでgetを探す（他所からきたやつ）
   post "logout" => "users#logout"
+  # session変数を変更するためpostで記入
   get "users/:id/likes" => "users#likes"
 
 #-----------------こっからReviewーーーーーーーーーーー
