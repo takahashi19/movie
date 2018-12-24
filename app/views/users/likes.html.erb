@@ -17,6 +17,7 @@
     
   <% @likes.each do |like| %>
   <% review = Review.find_by(id: like.review_id) %>
+  <!--＠likesにユーザーIDを拾わせて該当ユーザのものだけを指定しその中でもlikesのreview_idとレビューのIDを紐付けする変数を定義しfor文を回す-->
   <div class="reviews-index-item">
     <div class="review-left">
           <img src="<%= "/user_images/#{review.user.image_name}" %>">

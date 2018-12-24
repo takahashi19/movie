@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     @user = @review.user
     @likes_count = Like.where(review_id: @review.id).count
-    #いいねとReviewカウントの紐付け
+    #いいねとReviewカウントの紐付け。countメソッドでその中に入ってる分の「数を取得」する
   end
   
   def new
