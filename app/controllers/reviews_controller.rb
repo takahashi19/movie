@@ -4,10 +4,8 @@ class ReviewsController < ApplicationController
   
   def index
     @reviews = Review.includes(:movie).all.order(created_at: :desc)
-    # @reviews = Review.all.order(created_at: :desc)
-    # @movie = Movie.find_by(id: @reviews.movie_id)
     @movie = Movie.all
-    
+    # @reviewsでincludesで上手く「含めていない」なので@movieで全映画を取得してif文でIDを紐付ける手法
   end
   
   def show
@@ -15,14 +13,6 @@ class ReviewsController < ApplicationController
     @user = @review.user
     @likes_count = Like.where(review_id: @review.id).count
     #いいねとReviewカウントの紐付け。countメソッドでその中に入ってる分の「数を取得」する
-  end
-  
-  def new
-    @review = Review.new
-    @reviews = Review.find_by(id:4)
-    # /messages/:id→/messages/2が→params[:id] = 2
-    @c = Movie.find_by(id:1)
-    
   end
   
   def create

@@ -24,13 +24,13 @@
         <% end %>
       <% end %>
       <%= @likes_count %>
-      <!--いいねの回数表示-->
+      <!--whereで該当reviewsのidと紐付けcountメソッドで数いいねの回数表示-->
       
       <% if @review.user_id == @current_user.id %>
       <!--ログインユーザーと投稿ユーザーが一致しているならば編集と削除を表示-->
         <div class="review-menus">
           <%= link_to("編集", "/reviews/#{@review.id}/edit") %>
-          <%= link_to("削除", "/reviews/#{@review.id}/destroy", {method: "review"}) %>
+          <%= link_to("削除", "/reviews/#{@review.id}/destroy", {method: "post"}) %>
         </div>
       <% end %>
     </div>

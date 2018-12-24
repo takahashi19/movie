@@ -1,15 +1,11 @@
 class MoviesController < ApplicationController
   def home
-   #@ave = Review.group(:id).average(:hyouka)
-   #Reviewテーブルのhyouka（☆の平均を全id分求める）
-
-    @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
+     # @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
      #moviesテーブルとReviewsを連結する
-    
     @reviews = Review.all
     
     @movies = Movie.page(params[:page]).per(9).order('star DESC')
-     #ページング機能実装に必要な記述、star(星の平均値)順に並べ替え
+     #ページング機能実装に必要な記述、9ページstar(星の平均値)順に並べ替え
      
     @newss = Whatsnew.order(updated_at: :desc).limit(1)
     # 新着情報を表示
