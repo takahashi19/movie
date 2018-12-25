@@ -19,12 +19,19 @@
   <!-- Bootstrap JavaScript-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
 <body style="padding-top:70px;">
   <div class="container"><!-- 全体を囲むコンテナ -->
     <!-- ナビゲーション始まり -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
+      <div class="navbar-header">
+      <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+        <span class="sr-only">ナビゲーション</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      </div>
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="nav navbar-nav">
             <li>
@@ -56,7 +63,7 @@
                 <%= link_to("ログイン", "/login") %>
               </li>
             <% end %>
-          </ul>
+          </ul><!--nav navbar-nav-->
           <div class="navbar-form navbar-right">
             <div class="form-group">
               <%= form_tag movies_path, :method => 'get' do %> <%#〜_pathとは/messagesのリンクを作る　projects[_path]メソッドはモデル名で読みかえること %>
@@ -65,21 +72,24 @@
               <!--第一引数:パラメーター名,第二引数:初期値-->
               <%= submit_tag "検索",:class => "btn btn-primary", :name => nil %>
           <% end %>
-        </div>
-      </div>
-    </nav>
+            </div><!--form-group-->
+          </div><!--navbar-form navbar-right-->
+        </div><!--collapse navbar-collapse" id="mainNav-->
+      </div><!--container-fluid-->
+    </nav><!--navbar navbar-default navbar-fixed-top-->
+    
     <% if flash[:notice] %>
       <div class="flash">
        <%= flash[:notice] %>
-      </div>
+      </div><!--flash-->
     <% end %>
-
     <%= yield %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+    
  
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   
+  </div><!--container-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
  
 </html>

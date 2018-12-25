@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   # ログインしてなくてもmoviesは使える仕様のためbeforeactionは使わない
   def home
-     # @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
+    @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
      #moviesテーブルとReviewsを連結する
     @reviews = Review.all
     
