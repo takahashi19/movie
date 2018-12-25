@@ -1,7 +1,8 @@
 <div class="row">
-<% if @reviews == nil %>
+<% if @searchs == nil %>
 <div>検索結果はありません</div>
 <% end %>
+<!--動かなくなったので要検証lengthのif文でいけるかも-->
 <% @searchs.each do |movie| %>
   <div class="col-xs-12 col-md-4 text-center">
     <div class="thumbnail">

@@ -2,6 +2,7 @@
   <div class="container">
     <div class="user">
       <img src="<%= "/user_images/#{@user.image_name}" %>">
+      <!--publicに保存されてる画像を取得する-->
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>

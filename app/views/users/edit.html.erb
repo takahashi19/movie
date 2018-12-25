@@ -10,10 +10,12 @@
         <% end %>
       
         <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+        <!--multipart（マルチパート）:複数の種類のデータを一度に扱える形式。画像を送信したいときには{multipart: true}をつける必要がある深い理解は不要-->
           <p>ユーザー名</p>
           <input name="name" value="<%= @user.name %>">
           <p>画像</p>
           <input name="image" type="file">
+          <!--type="file"：サーバーにファイルを送信する。Postかmultipartの指定は必須-->
           <p>メールアドレス</p>
           <input name="email" value="<%= @user.email %>">
           <input type="submit" value="保存">
