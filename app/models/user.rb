@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  # gem bcrypyをインストールした事で使えるメソッド。ーザーを保存する際に自動的にパスワードを暗号化する。
+  # viewでauthenticateメソッドを用いる事で認証する事もできる
   
   validates :name, {presence: true}
   # {presence: true}：存在するかどうかの判断
@@ -10,7 +12,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }#重複防止
   
   def reviews
+    # UserとReviewを紐付けるメソッド
     return Review.where(user_id: self.id)
+    # whereで検索させてユーザーが持つ複数のReviewを取得させる
   end
   
 end

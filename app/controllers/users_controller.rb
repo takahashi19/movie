@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+    #  ApplicationControllerコントローラーを継承するための記述
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
-  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
-  # [:new, :create, :login_form, :login］はログイン中のユーザーには使えなくさせる
-  before_action :ensure_correct_user, {only: [:edit, :update]}
+    # before_action：これを記入する事でactionが処理される際は必ず処理が実行される
     # {only: [:edit, :update, :destroy]}の記述は特定のアクションだけを指定する時に用いる。中は配列の形式で書く
-  
+  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+    # [:new, :create, :login_form, :login］はログイン中のユーザーには使えなくさせる
+  before_action :ensure_correct_user, {only: [:edit, :update]}
+    # ensure_correct_userメソッド：（正しいか確かめるの意味）更新と編集時にユーザーが正しくない場合にはフラッシュでリダイレクトさせる
   def index
     @users = User.all
   end
@@ -104,6 +106,7 @@ class UsersController < ApplicationController
   
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
+      # prams取得のidが文字列のためto_iで数値変換
       flash[:notice] = "権限がありません"
       redirect_to("/reviews/index")
     end

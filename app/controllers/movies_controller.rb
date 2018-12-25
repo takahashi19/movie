@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
-  #  ApplicationControllerコントローラーを継承するための記述
-  # ログインしてなくてもmoviesは使える仕様
+  # ログインしてなくてもmoviesは使える仕様のためbeforeactionは使わない
   def home
      # @movies = Movie.joins(:reviews).select("movie.*,reviews.*").all
      #moviesテーブルとReviewsを連結する
