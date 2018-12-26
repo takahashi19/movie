@@ -9,6 +9,7 @@
   <p style="font-size:16px">興行収入ランキング</p>
 </div>
 
+
 <h3>最新情報</h3>
 <div class="well" style="font-size: 15px;">
    <%@newss.each do |n|%>
@@ -43,7 +44,7 @@
       <h2>第<%= sum%>位</h2>
       <% if movie.star %>
         <div class="star-rating-icon">
-        <span>評価：</span>
+        <span>評価：<%=movie.star.round(1)%></span>
         <% if movie.star == 5 %>
           <div class="star-rating">
             <div class="star-rating-item" style="width:100%;"></div>
