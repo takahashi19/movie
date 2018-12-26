@@ -45,17 +45,19 @@ INSERT INTO movies(movie_name,synopsis,grossing,image,created_at,updated_at) VAL
 
 
 INSERT INTO users(name,email,image_name,password_digest,created_at,updated_at) VALUES
-('test1','test1@gmail.com','default_user.jpg','test1','2018-12-20 05:13:00','2018-12-20 05:13:00'),
-('test2','test2@gmail.com','default_user.jpg','test2','2018-12-20 05:13:01','2018-12-20 05:13:01'),
-('test3','test3@gmail.com','default_user.jpg','test3','2018-12-20 05:13:02','2018-12-20 05:13:02'),
-('test4','test4@gmail.com','default_user.jpg','test4','2018-12-20 05:13:03','2018-12-20 05:13:03'),
-('test5','test5@gmail.com','default_user.jpg','test5','2018-12-20 05:13:04','2018-12-20 05:13:04'),
+('たっち・みー','test1@gmail.com','default_user.jpg','test1','2018-12-20 05:13:00','2018-12-20 05:13:00'),
+('ペロロンチーノ','test2@gmail.com','default_user.jpg','test2','2018-12-20 05:13:01','2018-12-20 05:13:01'),
+('モモンガ','test3@gmail.com','default_user.jpg','test3','2018-12-20 05:13:02','2018-12-20 05:13:02'),
+('TK','test4@gmail.com','default_user.jpg','test4','2018-12-20 05:13:03','2018-12-20 05:13:03'),
+('tarou','test5@gmail.com','default_user.jpg','test5','2018-12-20 05:13:04','2018-12-20 05:13:04'),
+('ぶくぶく茶釜','test6@gmail.com','default_user.jpg','test6','2018-12-20 05:13:05','2018-12-20 05:13:05'),
+('セシル','test7@gmail.com','default_user.jpg','test7','2018-12-20 05:13:06','2018-12-20 05:13:06'),
+('iris','test8@gmail.com','default_user.jpg','test8','2018-12-20 05:13:07','2018-12-20 05:13:07'),
+('キラ☆','test9@gmail.com','default_user.jpg','test9','2018-12-20 05:13:08','2018-12-20 05:13:08'),
+('reytyan','test10@gmail.com','default_user.jpg','test10','2018-12-20 05:13:09','2018-12-20 05:13:09');
 
-('test6','test6@gmail.com','default_user.jpg','test6','2018-12-20 05:13:05','2018-12-20 05:13:05'),
-('test7','test7@gmail.com','default_user.jpg','test7','2018-12-20 05:13:06','2018-12-20 05:13:06'),
-('test8','test8@gmail.com','default_user.jpg','test8','2018-12-20 05:13:07','2018-12-20 05:13:07'),
-('test9','test9@gmail.com','default_user.jpg','test9','2018-12-20 05:13:08','2018-12-20 05:13:08'),
-('test10','test10@gmail.com','default_user.jpg','test10','2018-12-20 05:13:09','2018-12-20 05:13:09');
+
+
 
 
 
