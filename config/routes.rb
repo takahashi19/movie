@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   #（ルーティングCRUD機能を軸としたルーティングがされる）
 
 #ーーーーーーーーーこっからUserーーーーーーーーーーー
-
+  resources:users
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
   get "signup" => "users#new"
-  get "users/index" => "users#index"
   get "users/:id" => "users#show"
   post "login" => "users#login"
   # 新規登録：フォームの値を送信するためpost:form_tagメソッドがデフォルトでpostを探す
@@ -25,10 +24,12 @@ Rails.application.routes.draw do
   post "logout" => "users#logout"
   # session変数を変更するためpostで記入
   get "users/:id/likes" => "users#likes"
+  # get "users/index" => "users#index"
 
 #-----------------こっからReviewーーーーーーーーーーー
 # resources:reviews RESTfulな書き方（index(例ユーザー一覧),show(例個別ユーザーP),new(例：新規登録画面),create（newを受けて生成）,edit（例：既存ユーザの編集）,update（editから更新）,destroy（削除） 7つisnceud viewは4つ）時間あったら変更（）
 #toを使った書き方　get 'messages/:id', to: 'messages#show'
+  resources:reviews
   get "reviews/index" => "reviews#index"
   get "reviews/:id" => "reviews#show"
   post "reviews/create" => "reviews#create"

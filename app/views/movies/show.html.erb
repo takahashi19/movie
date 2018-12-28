@@ -42,9 +42,12 @@
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
     <div class="col-sm-9">
       <textarea rows="6" placeholder="レビューを入力してください。" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
+      <!--レビュー(content)を送る-->
     </div>
   </div>
   <%= hidden_field_tag 'movie_id', @movie.id %>
+  <!--映画のIDを入れる-->
+  <!--<input id="movie" name="movie_id" type="hidden" value="@movie.id" />-->
   
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9 text-right" style="margin-top: 30px;">
@@ -53,11 +56,13 @@
     </div>
   </div>
   <% end %>
+  <!--foamタグ終了-->
 </div>
 <h3 class="page-header">レビュー欄</h3>
   <% @reviews.each do |r|%>
   <div class="well center-block" style="width:60%;">
     <h4>ユーザー名：<%= r.user.name %></h4>
+    <%# binding.pry %>
       <div class="star-rating-icon">
         <% if r.hyouka == 5 %>
           <div class="star-rating">

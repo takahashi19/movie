@@ -81,7 +81,7 @@ class UsersController < ApplicationController
       # ページを移動してもユーザー情報を保持する変数、sessionに代入された値は、ブラウザ(InternetExplorer, GoogleChrome等)に保存され逐一railsに送信してくれる。
       # session[:キー名]＝値　特定したユーザーの情報を保持できる
       flash[:notice] = "ログインしました"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     else
       # 一致していない場合はエラー文を変数にしてログインフォームに返す
       @error_message = "メールアドレスまたはパスワードが間違っています"

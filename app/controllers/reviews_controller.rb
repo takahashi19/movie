@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
     @movies = Movie.all
     if @review.save
       @aves = Review.group(:movie_id).average(:hyouka)
-      # .groupで指定カラムをキー化.averageで評価の平均値を求め、{1 => 4, 2 => 3,}という形式で入る
+      # .groupで指定カラムをキー化.averageで評価の平均値を求め、{movie_id=>hyouka}{1 => 4, 2 => 3,}という形式で入る
       @movies.each do | movie |
         @aves.each{|key, val|
         # keyに当たるのが「1 => 4」の場合１で、valueに当たるのが4
