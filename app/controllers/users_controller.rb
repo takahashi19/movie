@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     # ensure_correct_userメソッド：（正しいか確かめるの意味）更新と編集時にユーザーが正しくない場合にはフラッシュでリダイレクトさせる
   def index
     @users = User.all
+   
   end
   
   def show
@@ -108,7 +109,7 @@ class UsersController < ApplicationController
     if @current_user.id != params[:id].to_i
       # prams取得のidが文字列のためto_iで数値変換
       flash[:notice] = "権限がありません"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     end
   end
   

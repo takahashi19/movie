@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
       end
     #hyoukaを計算させて平均値をstarに代入したもの
       flash[:notice] = "レビューを投稿しました"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     else
       flash[:notice] = "投稿に失敗しました"
       @movie = Movie.find_by(id: params[:movie_id])
@@ -64,7 +64,7 @@ class ReviewsController < ApplicationController
     @review.content = params[:content]
     if @review.save
       flash[:notice] = "レビューを編集しました"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     else
       render("reviews/edit")
       # renderメソッド：他のアクションを経由せずに直接ビューを表示できる。また同アクション内変数等もそのまま使える
@@ -75,14 +75,14 @@ class ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     @review.destroy
     flash[:notice] = "レビューを削除しました"
-    redirect_to("/reviews/index")
+    redirect_to("/reviews")
   end
   
   def ensure_correct_user
     @review = Review.find_by(id: params[:id])
     if @review.user_id != @current_user.id
       flash[:notice] = "権限がありません"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     end
   end
   
