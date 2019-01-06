@@ -26,15 +26,14 @@
             <% elsif review.hyouka == 3 %>
               <span class="rate rate3"></span>
             <% elsif review.hyouka == 2 %>
-               <span class="rate rate2"></span>
+              <span class="rate rate2"></span>
             <% else %>
-            <span class="rate rate1"></span>
+              <span class="rate rate1"></span>
             <% end %>
           </div><!--star-rating-icon-->
           <div><%= link_to(review.content, "/reviews/#{review.id}") %></div>
         </div>
       </div>
-      
     <% end %>
   </div>
 </div>

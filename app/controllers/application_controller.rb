@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
     # ログインしてるユーザーが入れないようにするメソッド
     if @current_user
       flash[:notice] = "すでにログインしています"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     end
   end
-
+  
 end

@@ -6,7 +6,7 @@ class Review < ApplicationRecord
 
 
   def user
-    # Reviewモデルにuserモデルの中身を入れる記述。これでReviewの中でもUserが使用可能
+  # Reviewモデルにuserモデルの中身を入れる記述。これでReviewの中でもUserが使用可能
     return User.find_by(id: self.user_id)
   end
   
