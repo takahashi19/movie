@@ -10,12 +10,10 @@
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
-    
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
     </ul>
-    
     <% @user.reviews.each do |review| %>
       <div class="reviews-index-item">
         <div class="review-left">
@@ -26,14 +24,13 @@
             <%= link_to(review.user.name, "/users/#{review.user.id}") %>
           </div>
           <div>
-          <% @movie.each do |r|%>
-          <%if r.id == review.movie_id %>
-          映画名：<%=r.movie_name %>
+            <% @movie.each do |r|%>
+            <%if r.id == review.movie_id %>
+            映画名：<%=r.movie_name %>
             <%end%>
-          <%end%>
+            <%end%>
           <!--includesが上手くいかないためeach文に変更-->
           </div>
-          
           <div class="star-rating-icon">
             <% if review.hyouka == 5 %>
         	    <span class="rate rate5"></span>
@@ -42,16 +39,14 @@
             <% elsif review.hyouka == 3 %>
               <span class="rate rate3"></span>
             <% elsif review.hyouka == 2 %>
-               <span class="rate rate2"></span>
+              <span class="rate rate2"></span>
             <% else %>
-            <span class="rate rate1"></span>
+              <span class="rate rate1"></span>
             <% end %>
           </div><!--star-rating-icon-->
           <div class="review-content"><%= link_to(review.content, "/reviews/#{review.id}") %></div>
         </div>
       </div>
-      
     <% end %>
   </div>
 </div>
-

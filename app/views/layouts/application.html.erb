@@ -1,95 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <title>映画の口コミ</title>
-  <%= csrf_meta_tags %><!--セキュリティ対策用のコード-->
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %><!--CSS を読み込むためのコード-->
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!--JavaScript を読み込むためのコード-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--bootstrapとフォントawesome を読み込むためのコード-->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--ファビコン始-->
-  <link rel="shortcut icon" href="f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" /> 
-  <link rel="icon" href="f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" />
-  <!--ファビコン終-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Bootstrap JavaScript-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body style="padding-top:70px;">
-  <div class="container"><!-- 全体を囲むコンテナ -->
-    <!-- ナビゲーション始まり -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-      <div class="navbar-header">
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
-        <span class="sr-only">ナビゲーション</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      </div>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="nav navbar-nav">
-            <li>
+  <head>
+    <title>映画の口コミ</title>
+    <%= csrf_meta_tags %><!--セキュリティ対策用のコード-->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %><!--CSS を読み込むためのコード-->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!--JavaScript を読み込むためのコード-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!--bootstrapとフォントawesome を読み込むためのコード-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--ファビコン始-->
+    <link rel="shortcut icon" href="f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" /> 
+    <link rel="icon" href="f_f_event_28_s512_f_event_28_2bg.jpg" type="image/vnd.microsoft.icon" />
+    <!--ファビコン終-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body style="padding-top:70px;">
+    <div class="container"><!-- 全体を囲むコンテナ -->
+      <!-- ナビゲーション始まり -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+            <span class="sr-only">ナビゲーション</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="nav navbar-nav">
+              <li>
                 <%= link_to("映画の口コミ", "/") %>
-            </li>
-            <% if @current_user %>
-            <!--current_user（現在のユーザー）といういう意味。ログインされてるナビバー-->
-              <li>
-                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
               </li>
-              <li>
-                <%= link_to("投稿一覧", "/reviews") %>
-              </li>
-              <li>
-                <%= link_to("ユーザー一覧", "/users/index") %>
-              </li>
-              <li>
-                <%= link_to("ログアウト", "/logout", {method: :post}) %>
-              </li>
-            <% else %>
-            <!--ログインしてない状態のナビバー-->
-              <li>
-                <%= link_to("映画の口コミとは", "/about") %>
-              </li>
-              <li>
-                <%= link_to("新規登録", "/signup") %>
-              </li>
-              <li>
-                <%= link_to("ログイン", "/login") %>
-              </li>
-            <% end %>
-          </ul><!--nav navbar-nav-->
-          <div class="navbar-form navbar-right">
-            <div class="form-group">
-              <%= form_tag movies_path, :method => 'get' do %> <%#〜_pathとは/messagesのリンクを作る　projects[_path]メソッドはモデル名で読みかえること %>
-              <%# text_field_tag "family-name", "苗字", {class: "text-center"} %>
-              <%= text_field_tag :search,params[:search] ,{class: "form-control",placeholder:"キーワードを入力",size:"20"}%>
-              <!--第一引数:パラメーター名,第二引数:初期値-->
-              <%= submit_tag "検索",:class => "btn btn-primary", :name => nil %>
-          <% end %>
-            </div><!--form-group-->
-          </div><!--navbar-form navbar-right-->
-        </div><!--collapse navbar-collapse" id="mainNav-->
-      </div><!--container-fluid-->
-    </nav><!--navbar navbar-default navbar-fixed-top-->
-    
-    <% if flash[:notice] %>
-      <div class="flash">
-       <%= flash[:notice] %>
-      </div><!--flash-->
-    <% end %>
-    <%= yield %>
+              <% if @current_user %>
+              <!--current_user（現在のユーザー）といういう意味。ログインされてるナビバー-->
+                <li>
+                  <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+                </li>
+                <li>
+                  <%= link_to("投稿一覧", "/reviews") %>
+                </li>
+                <li>
+                  <%= link_to("ユーザー一覧", "/users/index") %>
+                </li>
+                <li>
+                  <%= link_to("ログアウト", "/logout", {method: :post}) %>
+                </li>
+              <% else %>
+              <!--ログインしてない状態のナビバー-->
+                <li>
+                  <%= link_to("映画の口コミとは", "/about") %>
+                </li>
+                <li>
+                  <%= link_to("新規登録", "/signup") %>
+                </li>
+                <li>
+                  <%= link_to("ログイン", "/login") %>
+                </li>
+              <% end %>
+            </ul><!--nav navbar-nav-->
+            <div class="navbar-form navbar-right">
+              <div class="form-group">
+                <%= form_tag movies_path, :method => 'get' do %> <%#〜_pathとは/messagesのリンクを作る　projects[_path]メソッドはモデル名で読みかえること %>
+                <%# text_field_tag "family-name", "苗字", {class: "text-center"} %>
+                <%= text_field_tag :search,params[:search] ,{class: "form-control",placeholder:"キーワードを入力",size:"20"}%>
+                <!--第一引数:パラメーター名,第二引数:初期値-->
+                <%= submit_tag "検索",:class => "btn btn-primary", :name => nil %>
+                <% end %>
+              </div><!--form-group-->
+            </div><!--navbar-form navbar-right-->
+          </div><!--collapse navbar-collapse" id="mainNav-->
+        </div><!--container-fluid-->
+      </nav><!--navbar navbar-default navbar-fixed-top-->
+      <% if flash[:notice] %>
+        <div class="flash">
+         <%= flash[:notice] %>
+        </div><!--flash-->
+      <% end %>
+      <%= yield %>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </div><!--container-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    
- 
-  </div><!--container-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</body>
- 
+  </body>
 </html>

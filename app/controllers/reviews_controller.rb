@@ -24,8 +24,8 @@ class ReviewsController < ApplicationController
       #新規投稿時に現在ログインしている@current_userユーザーIDを加える
       movie_id: params[:movie_id]
     )
-   
     @movies = Movie.all
+    
     if @review.save
       @aves = Review.group(:movie_id).average(:hyouka)
       # .groupで指定カラムをキー化.averageで評価の平均値を求め、{movie_id=>hyouka}{1 => 4, 2 => 3,}という形式で入る
@@ -54,7 +54,6 @@ class ReviewsController < ApplicationController
     
   end
   
-  #{@movie.movie.id}
   def edit
     @review = Review.find_by(id: params[:id])
   end
@@ -62,6 +61,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find_by(id: params[:id])
     @review.content = params[:content]
+    
     if @review.save
       flash[:notice] = "レビューを編集しました"
       redirect_to("/reviews")
@@ -69,6 +69,7 @@ class ReviewsController < ApplicationController
       render("reviews/edit")
       # renderメソッド：他のアクションを経由せずに直接ビューを表示できる。また同アクション内変数等もそのまま使える
     end
+    
   end
   
   def destroy
@@ -80,10 +81,12 @@ class ReviewsController < ApplicationController
   
   def ensure_correct_user
     @review = Review.find_by(id: params[:id])
+    
     if @review.user_id != @current_user.id
       flash[:notice] = "権限がありません"
       redirect_to("/reviews")
     end
+    
   end
   
 end
