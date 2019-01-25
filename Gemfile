@@ -74,10 +74,10 @@ gem 'kaminari', '~> 0.17.0'
 #ページング機能実装用のgem
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
-gem 'hirb'# 出力結果を表として出力するgem
-gem 'hirb-unicode'# マルチバイト文字の表示を補正するgem
-
-
+group :development, :test do
+  gem 'hirb'
+  gem 'hirb-unicode'
+end
 
 # group :development do
   # gem 'rubocop', require: false
