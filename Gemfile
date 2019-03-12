@@ -77,6 +77,10 @@ gem 'hirb-unicode'# マルチバイト文字の表示を補正するgem
 # group :development do
   # gem 'rubocop', require: false
 # end
+# Herokuの設定
 group :production do
   gem 'pg', '0.21.0'
 end
+
+
+gem 'rails_12factor', group: :production
