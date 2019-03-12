@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: eiga4_production
   username: eiga4
   password: <%= ENV['EIGA4_DATABASE_PASSWORD'] %>

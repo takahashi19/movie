@@ -77,3 +77,6 @@ gem 'hirb-unicode'# マルチバイト文字の表示を補正するgem
 # group :development do
   # gem 'rubocop', require: false
 # end
+group :production do
+  gem 'pg', '0.21.0'
+end
