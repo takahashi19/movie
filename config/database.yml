@@ -48,13 +48,15 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: eiga4_production
   username: eiga4
   password: <%= ENV['EIGA4_DATABASE_PASSWORD'] %>
 
 
-# 読み方ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+#読み方ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 # default: &default                       設定を default という名前で共通化する
 #   adapter: mysql2                       mysql2 に接続することを明示
 #   encoding: utf8                        文字コードは utf8 で接続
