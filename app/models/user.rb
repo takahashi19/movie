@@ -12,7 +12,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }#重複防止
   
   def reviews
-    # UserとReviewを紐付けるメソッド
+  # UserとReviewを紐付けるメソッド
     return Review.where(user_id: self.id)
     # whereで検索させてユーザーが持つ複数のReviewを取得させる
   end

@@ -8,7 +8,6 @@
             <%= message %>
           </div>
         <% end %>
-      
         <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
         <!--multipart（マルチパート）:複数の種類のデータを一度に扱える形式。画像を送信したいときには{multipart: true}をつける必要がある深い理解は不要-->
           <p>ユーザー名</p>

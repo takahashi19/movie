@@ -2,8 +2,7 @@
   <div class="thumbnail">
     <h2><%= @movie.movie_name%></h2>
     <!--movies.nameを実装-->
-   
-    <img src="<%= @movie.image %>">
+    <img src="/<%= @movie.image %>">
     <!--画像のカラムの呼び出し-->
     <div class="caption" style="font-size: 17px;">
       <p><%= @movie.synopsis%></p>
@@ -12,10 +11,8 @@
   </div>
 </div>
 <h3 class="page-header">評価</h3>
-
-
 <div class="form-horizontal">
- <%= form_tag("/reviews/create") do %>
+ <%= form_tag("/reviews") do %>
   <div class="form-group">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">
@@ -32,20 +29,21 @@
         <input id="star5" type="radio" name="hyouka" value="1" />
         <label for="star5"><span class="text">最悪</span>★</label>
       </div><!-- evaluation -->
-      <!--</div>-->
     </div>
       <% @review.errors.full_messages.each do |message| %>
-         <div class="col-sm-6"> <%= message %></div><!--<div class="form-error">-->
+        <div class="col-sm-6"> <%= message %></div><!--<div class="form-error">-->
       <% end %>
   </div>
   <div class="form-group">
     <label class="col-sm-3 control-label" for="ask1">レビュー</label>
     <div class="col-sm-9">
       <textarea rows="6" placeholder="レビューを入力してください。" name="content" class="form-control" id="ask1"><%= @review.content %></textarea>
+      <!--レビュー(content)を送る-->
     </div>
   </div>
   <%= hidden_field_tag 'movie_id', @movie.id %>
-  
+  <!--映画のIDを入れる-->
+  <!--<input id="movie" name="movie_id" type="hidden" value="@movie.id" />-->
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9 text-right" style="margin-top: 30px;">
       <button class="btn btn-default">クリア</button>
@@ -53,63 +51,53 @@
     </div>
   </div>
   <% end %>
+  <!--foamタグ終了-->
 </div>
 <h3 class="page-header">レビュー欄</h3>
   <% @reviews.each do |r|%>
   <div class="well center-block" style="width:60%;">
     <h4>ユーザー名：<%= r.user.name %></h4>
-      <div class="star-rating-icon">
-        <% if r.hyouka == 5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:100%;"></div>
-          </div>
-        <% elsif r.hyouka >= 4.5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:90%;"></div>
-          </div>
-        <% elsif r.hyouka >= 4 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:80%;"></div>
-          </div>
-        <% elsif r.hyouka >= 3.5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:69%;"></div>
-          </div>
-        <% elsif r.hyouka >= 3 %>
-            <div class="star-rating">
-            <div class="star-rating-item" style="width:59%;"></div>
-          </div>
-        <% elsif r.hyouka >= 2.5 %>
-           <div class="star-rating">
-            <div class="star-rating-item" style="width:50%;"></div>
-          </div>
-        <% elsif r.hyouka >= 2 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:40%;"></div>
-          </div>
-        <% elsif r.hyouka >= 1.5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:29%;"></div>
-          </div>
-         <% else %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:19%;"></div>
-          </div>
+    <%# binding.pry %>
+    <div class="star-rating-icon">
+      <% if r.hyouka == 5 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:100%;"></div>
+        </div>
+      <% elsif r.hyouka >= 4.5 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:90%;"></div>
+        </div>
+      <% elsif r.hyouka >= 4 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:80%;"></div>
+        </div>
+      <% elsif r.hyouka >= 3.5 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:69%;"></div>
+        </div>
+      <% elsif r.hyouka >= 3 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:59%;"></div>
+        </div>
+      <% elsif r.hyouka >= 2.5 %>
+         <div class="star-rating">
+          <div class="star-rating-item" style="width:50%;"></div>
+        </div>
+      <% elsif r.hyouka >= 2 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:40%;"></div>
+        </div>
+      <% elsif r.hyouka >= 1.5 %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:29%;"></div>
+        </div>
+      <% else %>
+        <div class="star-rating">
+          <div class="star-rating-item" style="width:19%;"></div>
+        </div>
       <% end %>
     </div><!--star-rating-icon-->
-   <p><%= r.content %></p>
+    <p><%= r.content %></p>
   </div>
   <!--この映画のそのユーザーのレビュー-->
   <%end%>
-
-
-
-  
-
-<!-- 全体を囲むコンテナ -->
-
-
-
-<!--星の表示はif分でも可能-->
-<!--eachで4回だすでも可能-->
-<!--簡単な検索ならRansack-->

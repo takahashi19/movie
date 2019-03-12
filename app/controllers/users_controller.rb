@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-    #  ApplicationControllerコントローラーを継承するための記述
+  #  ApplicationControllerコントローラーを継承するための記述
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
-    # before_action：これを記入する事でactionが処理される際は必ず処理が実行される
-    # {only: [:edit, :update, :destroy]}の記述は特定のアクションだけを指定する時に用いる。中は配列の形式で書く
+  # before_action：これを記入する事でactionが処理される際は必ず処理が実行される
+  # {only: [:edit, :update, :destroy]}の記述は特定のアクションだけを指定する時に用いる。中は配列の形式で書く
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
-    # [:new, :create, :login_form, :login］はログイン中のユーザーには使えなくさせる
+  # [:new, :create, :login_form, :login］はログイン中のユーザーには使えなくさせる
   before_action :ensure_correct_user, {only: [:edit, :update]}
-    # ensure_correct_userメソッド：（正しいか確かめるの意味）更新と編集時にユーザーが正しくない場合にはフラッシュでリダイレクトさせる
+  # ensure_correct_userメソッド：（正しいか確かめるの意味）更新と編集時にユーザーが正しくない場合にはフラッシュでリダイレクトさせる
   def index
     @users = User.all
   end
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     )
     #params=Railsで送られてきた値を受け取るためのメソッド.getのクエリパラメータとPostでformを使って送信されるデータの2つを取れる
     # imageに文字列を初期値として設定し初期画像を生成する。pramsで送られた情報（name）をキャッチする
+    
     if @user.save
       session[:user_id] = @user.id
       # 登録に成功した場合にはログイン状態にすぐする仕様
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
     else
       render("users/new")
     end
+    
   end
   
   def edit
@@ -65,6 +67,7 @@ class UsersController < ApplicationController
     else
       render("users/edit")
     end
+    
   end
   
   def login_form
@@ -81,7 +84,7 @@ class UsersController < ApplicationController
       # ページを移動してもユーザー情報を保持する変数、sessionに代入された値は、ブラウザ(InternetExplorer, GoogleChrome等)に保存され逐一railsに送信してくれる。
       # session[:キー名]＝値　特定したユーザーの情報を保持できる
       flash[:notice] = "ログインしました"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     else
       # 一致していない場合はエラー文を変数にしてログインフォームに返す
       @error_message = "メールアドレスまたはパスワードが間違っています"
@@ -89,6 +92,7 @@ class UsersController < ApplicationController
       @password = params[:password]
       render("users/login_form")
     end
+    
   end
   
   def logout
@@ -108,7 +112,7 @@ class UsersController < ApplicationController
     if @current_user.id != params[:id].to_i
       # prams取得のidが文字列のためto_iで数値変換
       flash[:notice] = "権限がありません"
-      redirect_to("/reviews/index")
+      redirect_to("/reviews")
     end
   end
   

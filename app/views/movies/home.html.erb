@@ -1,105 +1,90 @@
-
 <div class="aaa">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
-
-<div class="jumbotron"
-     style="color:#020202; text-shadow: 2px 2px 4px #666; 
-            height:300px; background:url(https://dl.dropboxusercontent.com/s/sepl7lftw4fob1r/kutsu_180427eigadorobo01.jpg); background-size:cover;">
-  <span class="h2">映画口コミサイト</span>
-  <p style="font-size:16px">興行収入ランキング</p>
-</div>
-
-<h3>最新情報</h3>
-<div class="well" style="font-size: 15px;">
-   <%@newss.each do |n|%>
-  <p><%=n.news%></p>
-  <% end %>
-  <div>
- </div>
-</div>
-
-
-<%a = params[:page].to_i%>
-<%if a == 0%>
-<%sum = 0%>
- <%elsif a == 2%>
- <%sum =9 %>
- <%elsif a == 3%>
- <%sum = 18%>
- <%elsif a == 4%>
- <%sum = 27 %>
- <%elsif a == 5%>
- <%sum = 36 %>
-<%end%>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+  <div class="jumbotron"style="color:#020202; text-shadow: 2px 2px 4px #666; height:300px; background:url(kutsu_180427eigadorobo01.jpg); background-size:cover;">
+    <span class="h2">映画口コミサイト</span>
+    <p style="font-size:16px">興行収入ランキング</p>
+  </div>
+  <h3>最新情報</h3>
+  <div class="well" style="font-size: 15px;">
+    <%@newss.each do |n|%>
+      <p><%=n.news%></p>
+    <% end %>
+  </div>
+  <%a = params[:page].to_i%>
+  <%if a == 0%>
+    <%sum = 0%>
+  <%elsif a == 2%>
+   <%sum =9 %>
+  <%elsif a == 3%>
+   <%sum = 18%>
+  <%elsif a == 4%>
+   <%sum = 27 %>
+  <%elsif a == 5%>
+   <%sum = 36 %>
+  <%end%>
 <!--トップ30位までの「順位を表示する」ためにsumを定義。それ以上順位を増やす場合はelseifをたす必要性あり-->
  
   <div class="row">
   <!--#順位をだすための変数を定義-->
-  <% @movies.each do |movie| %>
-    <div class="col-xs-12 col-md-4 text-center">
-      <div class="thumbnail">
-
-       <% sum+=1%>
-      <h2>第<%= sum%>位</h2>
-      <% if movie.star %>
-        <div class="star-rating-icon">
-        <span>評価：</span>
-        <% if movie.star == 5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:100%;"></div>
+    <% @movies.each do |movie| %>
+      <div class="col-xs-12 col-md-4 text-center">
+        <div class="thumbnail">
+          <% sum+=1%>
+          <h2>第<%= sum%>位</h2>
+          <% if movie.star %>
+          <div class="star-rating-icon">
+            <span>評価：<%=movie.star.round(1)%></span>
+            <% if movie.star == 5 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:100%;"></div>
+              </div>
+            <% elsif movie.star >= 4.5 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:90%;"></div>
+              </div>
+            <% elsif movie.star >= 4 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:80%;"></div>
+              </div>
+            <% elsif movie.star >= 3.5 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:69%;"></div>
+              </div>
+            <% elsif movie.star >= 3 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:59%;"></div>
+              </div>
+            <% elsif movie.star >= 2.5 %>
+               <div class="star-rating">
+                <div class="star-rating-item" style="width:50%;"></div>
+              </div>
+            <% elsif movie.star >= 2 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:40%;"></div>
+              </div>
+            <% elsif movie.star >= 1.5 %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:29%;"></div>
+              </div>
+            <% else %>
+              <div class="star-rating">
+                <div class="star-rating-item" style="width:19%;"></div>
+              </div>
+            <% end %>
+          </div><!--star-rating-icon--><!--star-rating-icon-->
+          <h3 style="font-size: 12px;"><%= movie.movie_name %></h3>
+          <img src=<%= movie.image %>>
+          <div class="caption" style="font-size: 17px; height:200px;">
+            <p><%= movie.synopsis %></p>
           </div>
-        <% elsif movie.star >= 4.5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:90%;"></div>
-          </div>
-        <% elsif movie.star >= 4 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:80%;"></div>
-          </div>
-        <% elsif movie.star >= 3.5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:69%;"></div>
-          </div>
-        <% elsif movie.star >= 3 %>
-            <div class="star-rating">
-            <div class="star-rating-item" style="width:59%;"></div>
-          </div>
-        <% elsif movie.star >= 2.5 %>
-           <div class="star-rating">
-            <div class="star-rating-item" style="width:50%;"></div>
-          </div>
-        <% elsif movie.star >= 2 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:40%;"></div>
-          </div>
-        <% elsif movie.star >= 1.5 %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:29%;"></div>
-          </div>
-         <% else %>
-          <div class="star-rating">
-            <div class="star-rating-item" style="width:19%;"></div>
-          </div>
-      <% end %>
-      
-    </div><!--star-rating-icon--><!--star-rating-icon-->
-
-      <h3 style="
-      font-size: 12px;
-  "><%= movie.movie_name %></h3>
-      <img src=<%= movie.image %>>
-      <div class="caption" style="font-size: 17px; height:200px;">
-        <p><%= movie.synopsis %></p>
+          <%= link_to("レビューを書く", "/movies/#{movie.id}",class: 'btn btn-primary') %>
+        </div>
       </div>
-         <%= link_to("レビューを書く", "/movies/#{movie.id}",class: 'btn btn-primary') %>
-   </div>
+    <% end %>
+  <% end %>
   </div>
- <%end%>
-<% end %>
-
+    <div><%= paginate @movies %></div>
 </div>
-  <div><%= paginate @movies %></div>
-</div>        <!-- 全体を囲むコンテナ -->
 
 
 
