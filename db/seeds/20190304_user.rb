@@ -20,6 +20,26 @@ Movie.create!([
   {movie_name: "ファインディング・ニモ", synopsis: "打ちひしがれるマーリンだったが、陽気なナンヨウハギ、ドリーの助けを借りてニモを取り戻す旅へと出るのだった。", grossing: "936743261", image: "findingnemo.jpg", star: 1.0},
   {movie_name: "ホビット 決戦のゆくえ", synopsis: "エルフは財宝の分配を要求すると、トーリンはこれを頑なに拒否してしまう。衝突を回避しようと行動に出るビルボだったが…", grossing: "955119788", image: "hobbit_thebattle%20ofthefive%20armies.jpg", star: 1.0}
 ])
+
+
+User.create!([
+  {name: "たっち・みー", email: "test1@gmail.com", image_name: "default_user.jpg", password_digest: "test1"},
+  {name: "ペロロンチーノ", email: "test2@gmail.com", image_name: "default_user.jpg", password_digest: "test2"},
+  {name: "モモンガ", email: "test3@gmail.com", image_name: "default_user.jpg", password_digest: "test3"},
+  {name: "TK", email: "test4@gmail.com", image_name: "default_user.jpg", password_digest: "test4"},
+  {name: "tarou", email: "test5@gmail.com", image_name: "default_user.jpg", password_digest: "test5"},
+  {name: "ぶくぶく茶釜", email: "test6@gmail.com", image_name: "default_user.jpg", password_digest: "test6"},
+  {name: "セシル", email: "test7@gmail.com", image_name: "default_user.jpg", password_digest: "test7"},
+  {name: "iris", email: "test8@gmail.com", image_name: "default_user.jpg", password_digest: "test8"},
+  {name: "キラ☆", email: "test9@gmail.com", image_name: "default_user.jpg", password_digest: "test9"},
+  {name: "reytyan", email: "test10@gmail.com", image_name: "default_user.jpg", password_digest: "test10"}
+])
+Whatsnew.create!([
+  {news: "新宿にて「ヘレディタリー／継承」皆で叫べば大丈夫!?絶叫上映決定！！「ホラー映画は怖くて、リアクションが大きくなってしまうので遠慮してる」「一人で怖いシーンで声を出してしまうのは恥ずかしい」との声に応えて遠慮なく全力で怖がることができる“絶叫上映”をご用意しました"},
+  {news: "新宿にて「ヘレディタリー／継承」皆で叫べば大丈夫!?絶叫上映決定！！来年度、第13回目となるTOHOシネマズ学生映画祭の開催が決定しました。現在、作品を募集中です。詳細は、TOHOシネマズ学生映画祭の公式サイトをご参照ください。"},
+  {news: "六本木ヒルズにて「舞台版・無限の住人～完結編～」上映会＆トークショー　実施決定！！12月23日（日）「舞台版・無限の住人～完結編～」上映会＆トークショーを行ないます。トークショーには関 智一さん、長沢美樹さん、福圓美里さん、島﨑信長さん、沖野晃司さんが登場！"},
+  {news: "日比谷にて、映画「ニセコイ」公開記念舞台挨拶　開催決定！！TOHOシネマズ日比谷にて、映画『ニセコイ』公開記念舞台挨拶の開催が決定しました中島健人さん,中条あやみさん,池間夏海さん,島崎遥香さん,岸優太さん,DAIGOさんをお迎えして舞台挨拶を実施致します"}
+])
 Review.create!([
   {content: "test1", hyouka: 5, user_id: 1, movie_id: 1},
   {content: "test2", hyouka: 4, user_id: 2, movie_id: 2},
@@ -41,16 +61,6 @@ Review.create!([
   {content: "test3", hyouka: 5, user_id: 8, movie_id: 18},
   {content: "test4", hyouka: 2, user_id: 9, movie_id: 19},
   {content: "test5", hyouka: 4, user_id: 10, movie_id: 20},
-  {content: "test6", hyouka: 5, user_id: 1, movie_id: 21},
-  {content: "test7", hyouka: 4, user_id: 2, movie_id: 22},
-  {content: "test8", hyouka: 1, user_id: 3, movie_id: 23},
-  {content: "test9", hyouka: 4, user_id: 4, movie_id: 24},
-  {content: "test10", hyouka: 5, user_id: 5, movie_id: 25},
-  {content: "test11", hyouka: 4, user_id: 6, movie_id: 26},
-  {content: "test12", hyouka: 1, user_id: 7, movie_id: 27},
-  {content: "test13", hyouka: 2, user_id: 8, movie_id: 28},
-  {content: "test14", hyouka: 4, user_id: 9, movie_id: 29},
-  {content: "test15", hyouka: 5, user_id: 10, movie_id: 30},
   {content: "test16", hyouka: 3, user_id: 1, movie_id: 1},
   {content: "test17", hyouka: 3, user_id: 2, movie_id: 2},
   {content: "test18", hyouka: 3, user_id: 3, movie_id: 3},
@@ -70,33 +80,6 @@ Review.create!([
   {content: "test32", hyouka: 3, user_id: 7, movie_id: 17},
   {content: "test33", hyouka: 1, user_id: 8, movie_id: 18},
   {content: "test34", hyouka: 1, user_id: 9, movie_id: 19},
-  {content: "test35", hyouka: 1, user_id: 10, movie_id: 20},
-  {content: "test36", hyouka: 1, user_id: 1, movie_id: 21},
-  {content: "test37", hyouka: 1, user_id: 2, movie_id: 22},
-  {content: "test38", hyouka: 1, user_id: 3, movie_id: 23},
-  {content: "test39", hyouka: 1, user_id: 4, movie_id: 24},
-  {content: "test40", hyouka: 1, user_id: 5, movie_id: 25},
-  {content: "test41", hyouka: 1, user_id: 6, movie_id: 26},
-  {content: "test42", hyouka: 1, user_id: 7, movie_id: 27},
-  {content: "test43", hyouka: 1, user_id: 8, movie_id: 28},
-  {content: "test44", hyouka: 1, user_id: 9, movie_id: 29},
-  {content: "test45", hyouka: 1, user_id: 10, movie_id: 30}
-])
-User.create!([
-  {name: "たっち・みー", email: "test1@gmail.com", image_name: "default_user.jpg", password_digest: "test1"},
-  {name: "ペロロンチーノ", email: "test2@gmail.com", image_name: "default_user.jpg", password_digest: "test2"},
-  {name: "モモンガ", email: "test3@gmail.com", image_name: "default_user.jpg", password_digest: "test3"},
-  {name: "TK", email: "test4@gmail.com", image_name: "default_user.jpg", password_digest: "test4"},
-  {name: "tarou", email: "test5@gmail.com", image_name: "default_user.jpg", password_digest: "test5"},
-  {name: "ぶくぶく茶釜", email: "test6@gmail.com", image_name: "default_user.jpg", password_digest: "test6"},
-  {name: "セシル", email: "test7@gmail.com", image_name: "default_user.jpg", password_digest: "test7"},
-  {name: "iris", email: "test8@gmail.com", image_name: "default_user.jpg", password_digest: "test8"},
-  {name: "キラ☆", email: "test9@gmail.com", image_name: "default_user.jpg", password_digest: "test9"},
-  {name: "reytyan", email: "test10@gmail.com", image_name: "default_user.jpg", password_digest: "test10"}
-])
-Whatsnew.create!([
-  {news: "新宿にて「ヘレディタリー／継承」皆で叫べば大丈夫!?絶叫上映決定！！「ホラー映画は怖くて、リアクションが大きくなってしまうので遠慮してる」「一人で怖いシーンで声を出してしまうのは恥ずかしい」との声に応えて遠慮なく全力で怖がることができる“絶叫上映”をご用意しました"},
-  {news: "新宿にて「ヘレディタリー／継承」皆で叫べば大丈夫!?絶叫上映決定！！来年度、第13回目となるTOHOシネマズ学生映画祭の開催が決定しました。現在、作品を募集中です。詳細は、TOHOシネマズ学生映画祭の公式サイトをご参照ください。"},
-  {news: "六本木ヒルズにて「舞台版・無限の住人～完結編～」上映会＆トークショー　実施決定！！12月23日（日）「舞台版・無限の住人～完結編～」上映会＆トークショーを行ないます。トークショーには関 智一さん、長沢美樹さん、福圓美里さん、島﨑信長さん、沖野晃司さんが登場！"},
-  {news: "日比谷にて、映画「ニセコイ」公開記念舞台挨拶　開催決定！！TOHOシネマズ日比谷にて、映画『ニセコイ』公開記念舞台挨拶の開催が決定しました中島健人さん,中条あやみさん,池間夏海さん,島崎遥香さん,岸優太さん,DAIGOさんをお迎えして舞台挨拶を実施致します"}
+  {content: "test35", hyouka: 1, user_id: 10, movie_id: 20}
+
 ])
