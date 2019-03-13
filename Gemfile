@@ -84,3 +84,9 @@ end
 
 
 gem 'rails_12factor', group: :production
+# gem 'activerecord-jdbcpostgresql-adapter'
+gem 'seed_dump'
+
+# gem 'activerecord-jdbc-adapte', platform: :jruby
+
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
